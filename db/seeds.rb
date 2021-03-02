@@ -20,14 +20,58 @@ events = JSON.parse(event_serialized.body)
 
 # puts event.length
 
-p events.first
+p events
 
 events.each do |event|
   activity = Activity.new
   activity.name = event['name'].strip
   activity.description = event['descriptions'][0]['description'].strip
+  activity.opening_time = event['schedules'][0]['start_ts'].strip
+  activity.closing_time = event['schedules'][0]['end_ts'].strip
+  activity.address  = event['schedules'][0]['place']['address'].strip
+  activity.town  = event['schedules'][0]['place']['town'].strip
+  activity.post_code  = event['schedules'][0]['place']['postal_code'].strip
+  #activity.name  = event['schedules'][0]['place']['name'].strip
+  #activity.  = event['schedules'][0]['place']['lat']
+  #activity.  = event['schedules'][0]['place']['lng']
+  activity.website  = event['website']
+  #activity.  = event['tags']
+  #activity.photo = event['images'][0]['url']
   puts activity.valid?
   activity.save!
+end
+
+Restaurant.destroy_all
+
+place_url = 'https://api.list.co.uk/v1/places?town=london'
+uri_place = URI(place_url)
+req_place = Net::HTTP::Get.new(uri_place)
+req_place["Authorization"] = ENV['LIST_API_KEY']
+place_serialized = Net::HTTP.start(uri_place.hostname,uri_place.port,use_ssl: uri_place.scheme == "https") {|http| http.request(req_place)}
+# p event_serialized.body
+places = JSON.parse(place_serialized.body)
+
+# puts event.length
+
+p places
+
+places.each do |place|
+  restaurant = Restaurant.new
+  restaurant.name = place['name'].strip
+  restaurant.description = place['descriptions'][0]['description'].strip
+  # restaurant.opening_time = place['schedules'][0]['start_ts'].strip
+  # restaurant.closing_time = place['schedules'][0]['end_ts'].strip
+  restaurant.address  = place['schedules'][0]['place']['address'].strip
+  restaurant.town  = place['schedules'][0]['place']['town'].strip
+  restaurant.post_code  = place['schedules'][0]['place']['postal_code'].strip
+  #activity.name  = restaurant['schedules'][0]['place']['name'].strip
+  #activity.  = restaurant['schedules'][0]['place']['lat']
+  #activity.  = restaurant['schedules'][0]['place']['lng']
+  place.website  = restaurant['website']
+  #activity.  = restaurant['tags']
+  #activity.photo = restaurant['images'][0]['url']
+  puts restaurant.valid?
+  restaurant.save!
 end
 
 
