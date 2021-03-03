@@ -12,10 +12,22 @@
   <%= f.submit "submit" %>
 <% end %>
 
+<div>
 <%= @restaurant.name %> <br>
+</div>
 
+<div>
 <%= @bar.name %> <br>
+</div>
 
+<div>
 <%= @activity.name %>
+</div>
 
-<%= link_to "Refresh", "" %>
+<%= link_to "Refresh", "" %> 
+
+<%# <button class = 'results-reload'>Click to Reload</button> %>
+
+<%# <button type="submit" onClick=“reload()”>Refresh Button</button>
+
+<%# <button onclick='reloadDIV ();'>reload div</button> %>
