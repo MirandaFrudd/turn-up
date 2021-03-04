@@ -20,7 +20,7 @@ events = JSON.parse(event_serialized.body)
 
 # puts event.length
 
-p events
+# p events
 
 events.each do |event|
   activity = Activity.new
@@ -41,7 +41,11 @@ events.each do |event|
   activity.save!
 end
 
+puts "there are #{Activity.count} activities"
+
+
 Restaurant.destroy_all
+Bar.destroy_all
 
 place_url = 'https://api.list.co.uk/v1/places?town=london'
 uri_place = URI(place_url)
@@ -53,25 +57,46 @@ places = JSON.parse(place_serialized.body)
 
 # puts event.length
 
-p places
-
-places.each do |place|
-  restaurant = Restaurant.new
-  restaurant.name = place['name'].strip
-  restaurant.description = place['descriptions'][0]['description'].strip
-  # restaurant.opening_time = place['schedules'][0]['start_ts'].strip
-  # restaurant.closing_time = place['schedules'][0]['end_ts'].strip
-  restaurant.address  = place['schedules'][0]['place']['address'].strip
-  restaurant.town  = place['schedules'][0]['place']['town'].strip
-  restaurant.post_code  = place['schedules'][0]['place']['postal_code'].strip
-  #activity.name  = restaurant['schedules'][0]['place']['name'].strip
-  #activity.  = restaurant['schedules'][0]['place']['lat']
-  #activity.  = restaurant['schedules'][0]['place']['lng']
-  place.website  = restaurant['website']
-  #activity.  = restaurant['tags']
-  #activity.photo = restaurant['images'][0]['url']
-  puts restaurant.valid?
-  restaurant.save!
-end
+# p places
 
 
+
+
+  places.each do |place|
+    if place['tags'].include? 'restaurants'
+      restaurant = Restaurant.new
+      restaurant.name = place['name'].strip
+      # restaurant.description = place['descriptions'][0]['description'].strip
+      # # restaurant.opening_time = place['schedules'][0]['start_ts'].strip
+      # # restaurant.closing_time = place['schedules'][0]['end_ts'].strip
+      restaurant.address  = place['address'].strip
+      restaurant.town  = place['town'].strip
+      # restaurant.post_code  = place['schedules'][0]['place']['postal_code'].strip
+      # place.website  = restaurant['website']
+      puts restaurant.valid?
+      restaurant.save!
+    elsif place['tags'].include? 'pubs & bars'
+      bar = Bar.new
+      bar.name = place['name'].strip
+      # bar.description = place['descriptions'][0]['description'].strip
+      # # bar.opening_time = place['schedules'][0]['start_ts'].strip
+      # # bar.closing_time = place['schedules'][0]['end_ts'].strip
+      bar.address  = place['address'].strip
+      bar.town  = place['town'].strip
+      # bar.post_code  = place['schedules'][0]['place']['postal_code'].strip
+      # place.website  = bar['website']
+      puts bar.valid?
+      bar.save!
+    end
+  end
+
+
+
+puts "there are #{Restaurant.count} restaurants"
+
+puts "there are #{Bar.count} bars"
+
+
+p Restaurant.all
+
+p Bar.all
