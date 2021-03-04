@@ -1,5 +1,13 @@
 <h1>Show card page</h1>
 
+<%# <%= link_to "star", favourites_path(restaurant_id: @restaurant.id, bar_id: @bar.id, activity_id: @activity.id), method: :post %> %>
+
+<%= form_with model: Favourite.new do |f| %>
+  <%= f.hidden_field :restaurant_id, value: @restaurant.id %>
+  <%= f.hidden_field :bar_id, value: @bar.id %>
+  <%= f.hidden_field :activity_id, value: @activity.id %>
+  <%= f.submit "submit" %>
+<% end %>
 
 <%= @restaurant.name %> <br>
 
