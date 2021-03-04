@@ -1,0 +1,7 @@
+<h1>Favourites page</h1>
+
+<% @favourites.each do |favourite| %>
+  <%= favourite.restaurant.name %>
+  <%= favourite.bar.name %>
+  <%= favourite.activity.name %>
+<% end %>
