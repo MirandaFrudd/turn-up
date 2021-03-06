@@ -8,6 +8,7 @@
 require 'json'
 require 'net/http'
 require 'faker'
+require 'open-uri'
 
 Activity.destroy_all
 
@@ -93,6 +94,134 @@ places = JSON.parse(place_serialized.body)
     end
   end
 
+
+restaurant1 = Restaurant.new(
+  name: "Koya Soho",
+  description: "Simple, cafe-style Japanese for udon noodles and small plates served at communal tables.",
+  address: "50 Frith St, Soho",
+  town: "London",
+  post_code: "W1D 4SQ",
+  website: "http://www.koya.co.uk/",
+  budget: 2,
+  day: true,
+  night: true
+  )
+puts restaurant1.valid?
+file = URI.open('app/assets/images/koya.jpeg')
+restaurant1.photo.attach(io: file, filename: 'koya.jpg', content_type: 'image/jpg')
+restaurant1.save!
+
+restaurant2 = Restaurant.new(
+  name: "Morito",
+  description: "Spartan tapas bar which shares the buzz and the Spanish–North African flavours of next-door Moro.",
+  address: "532 Exmouth Market, Farringdon",
+  town: "London",
+  post_code: "EC1R 4QE",
+  website: "http://www.morito.co.uk/",
+  budget: 2,
+  day: false,
+  night: true
+  )
+puts restaurant2.valid?
+file = URI.open('app/assets/images/morito.jpg')
+restaurant2.photo.attach(io: file, filename: 'morito.jpg', content_type: 'image/jpg')
+restaurant2.save!
+
+restaurant3 = Restaurant.new(
+  name: "Clipstone",
+  description: "Relaxed eatery serving seasonal dishes of British ingredients alongside inexpensive wines on tap.",
+  address: "5 Clipstone St, Fitzrovia",
+  town: "London",
+  post_code: "W1W 6BB",
+  website: "http://www.clipstonerestaurant.co.uk/",
+  budget: 3,
+  day: true,
+  night: true
+  )
+puts restaurant3.valid?
+file = URI.open('app/assets/images/clipstone.jpg')
+restaurant3.photo.attach(io: file, filename: 'clipstone.jpg', content_type: 'image/jpg')
+restaurant3.save!
+
+restaurant4 = Restaurant.new(
+  name: "Din Tai Fung",
+  description: "Welcome to Din Tai Fung, a world-renowned Chinese restaurant originating in Taiwan that specializes in soup dumplings and noodles.",
+  address: "5 Henrietta St, Covent Garden",
+  town: "London",
+  post_code: "WC2E 8PS",
+  website: "http://www.dintaifung-uk.com/",
+  budget: 2,
+  day: true,
+  night: true
+  )
+puts restaurant4.valid?
+file = URI.open('app/assets/images/dintaifung.jpg')
+restaurant4.photo.attach(io: file, filename: 'dintaifung.jpg', content_type: 'image/jpg')
+restaurant4.save!
+
+restaurant5 = Restaurant.new(
+  name: "Kitty Fisher's Mayfair",
+  description: "Modern British fare with a Spanish twist served in a polished, dimly lit space with a bar.",
+  address: "10 Shepherd Market, Mayfair",
+  town: "London",
+  post_code: "W1J 7QF",
+  website: "https://www.kittyfishers.com/",
+  budget: 3,
+  day: false,
+  night: true
+  )
+puts restaurant5.valid?
+file = URI.open('app/assets/images/kitty-fishers.jpg')
+restaurant5.photo.attach(io: file, filename: 'kitty-fishers.jpg', content_type: 'image/jpg')
+restaurant5.save!
+
+restaurant6 = Restaurant.new(
+  name: "Som Saa Thai Restaurant",
+  description: "Buzzy bar/restaurant in former fabric warehouse, serving old-style Thai cuisine & intriguing drinks.",
+  address: "143A Commercial St, Shoreditch",
+  town: "London",
+  post_code: "E1 6BD",
+  website: "http://www.somsaa.com/",
+  budget: 2,
+  day: true,
+  night: true
+  )
+puts restaurant6.valid?
+file = URI.open('app/assets/images/somsaa.jpeg')
+restaurant6.photo.attach(io: file, filename: 'somsaa.jpg', content_type: 'image/jpg')
+restaurant6.save!
+
+restaurant7 = Restaurant.new(
+  name: "SMOKESTAK | london barbecue",
+  description: "A smoker and grill take centre stage at this stylishly rustic barbecue joint with a bar and terrace.",
+  address: "35 Sclater St, Shoreditch",
+  town: "London",
+  post_code: "E1 6LB",
+  website: "https://smokestak.co.uk/",
+  budget: 2,
+  day: true,
+  night: true
+  )
+puts restaurant7.valid?
+file = URI.open('app/assets/images/smokestak.jpg')
+restaurant7.photo.attach(io: file, filename: 'smokestak.jpg', content_type: 'image/jpg')
+restaurant7.save!
+
+restaurant8 = Restaurant.new(
+  name: "Black Bear Burger Restaurant Shoreditch",
+  description: "Casual, rustic spot for sustainable burgers made with aged grass-fed beef plus beer & patio seating.",
+  address: "Boxpark 10, Bethnal Green Rd",
+  town: "London",
+  post_code: "E1 6GY",
+  website: "http://www.blackbearburger.com/",
+  budget: 1,
+  day: true,
+  night: false
+  )
+puts restaurant8.valid?
+file = URI.open('app/assets/images/blackbearburger.jpg')
+restaurant8.photo.attach(io: file, filename: 'blackbearburger.jpg', content_type: 'image/jpg')
+restaurant8.save!
 
 
 puts "there are #{Restaurant.count} restaurants"
