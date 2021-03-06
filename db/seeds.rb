@@ -91,6 +91,7 @@ places = JSON.parse(place_serialized.body)
     end
   end
 
+
 restaurant1 = Restaurant.new(
   name: "Koya Soho",
   description: "Simple, cafe-style Japanese for udon noodles and small plates served at communal tables.",

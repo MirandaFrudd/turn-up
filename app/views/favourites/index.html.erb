@@ -4,4 +4,5 @@
   <%= favourite.restaurant.name %>
   <%= favourite.bar.name %>
   <%= favourite.activity.name %>
+  <%= link_to "Delete", favourite_path(favourite), method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
