@@ -90,6 +90,7 @@ places = JSON.parse(place_serialized.body)
     end
   end
 
+  
 
 
 puts "there are #{Restaurant.count} restaurants"
