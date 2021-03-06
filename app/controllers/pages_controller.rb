@@ -5,13 +5,9 @@ class PagesController < ApplicationController
   end
 
   def index
-   
-    @restaurant = Restaurant.where(town: params[:query]).sample
-
-    @bar = Bar.where(town: params[:query]).sample
-
-    @activity = Activity.where(town: params[:query]).sample
- 
+    @restaurant = Restaurant.where("town ILIKE ?", "%#{params[:query]}%").sample
+    @bar = Bar.where("town ILIKE ?", "%#{params[:query]}%").sample
+    @activity = Activity.where("town ILIKE ?", "%#{params[:query]}%").sample
   end
 
   def profile
