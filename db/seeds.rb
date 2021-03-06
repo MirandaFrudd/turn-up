@@ -35,8 +35,8 @@ events.each do |event|
   #activity.  = event['schedules'][0]['place']['lat']
   #activity.  = event['schedules'][0]['place']['lng']
   activity.website  = event['website']
-  #activity.  = event['tags']
-  #activity.photo = event['images'][0]['url']
+  activity.  = event['tags']
+  activity.photo = event['images'][0]['url'] rescue ""
   puts activity.valid?
   activity.save!
 end
