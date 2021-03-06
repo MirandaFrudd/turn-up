@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'json'
 require 'net/http'
+require 'faker'
 
 Activity.destroy_all
 
@@ -35,8 +36,9 @@ events.each do |event|
   #activity.  = event['schedules'][0]['place']['lat']
   #activity.  = event['schedules'][0]['place']['lng']
   activity.website  = event['website']
-  activity.  = event['tags']
-  activity.photo = event['images'][0]['url'] rescue ""
+  # activity.  = event['tags']
+  activity.photo = "https://source.unsplash.com/random(400x400)"
+  # activity.photo = event['images'][0]['url'] rescue ""
   puts activity.valid?
   activity.save!
 end
@@ -66,7 +68,7 @@ places = JSON.parse(place_serialized.body)
     if place['tags'].include? 'restaurants'
       restaurant = Restaurant.new
       restaurant.name = place['name'].strip
-      # restaurant.description = place['descriptions'][0]['description'].strip
+      restaurant.description = Faker::Lorem.sentence(word_count: 20)
       # # restaurant.opening_time = place['schedules'][0]['start_ts'].strip
       # # restaurant.closing_time = place['schedules'][0]['end_ts'].strip
       restaurant.address  = place['address'].strip
@@ -78,6 +80,7 @@ places = JSON.parse(place_serialized.body)
     elsif place['tags'].include? 'pubs & bars'
       bar = Bar.new
       bar.name = place['name'].strip
+      bar.description = Faker::Lorem.sentence(word_count: 20)
       # bar.description = place['descriptions'][0]['description'].strip
       # # bar.opening_time = place['schedules'][0]['start_ts'].strip
       # # bar.closing_time = place['schedules'][0]['end_ts'].strip
@@ -95,7 +98,6 @@ places = JSON.parse(place_serialized.body)
 puts "there are #{Restaurant.count} restaurants"
 
 puts "there are #{Bar.count} bars"
-
 
 p Restaurant.all
 
