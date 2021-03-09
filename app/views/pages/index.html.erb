@@ -44,15 +44,15 @@
   </div>
   <div class="justify-space-between">
     <%= form_with model: Favourite.new do |f| %>
-    <%= f.hidden_field :restaurant_id, value: @restaurant.id %>
-    <%= f.hidden_field :bar_id, value: @bar.id %>
-    <%= f.hidden_field :activity_id, value: @activity.id %>
-    <% if current_user %>
-      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.hidden_field :restaurant_id, value: @restaurant.id %>
+      <%= f.hidden_field :bar_id, value: @bar.id %>
+      <%= f.hidden_field :activity_id, value: @activity.id %>
+      <% if current_user %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+      <% end %>
+      <%= f.submit "Like" %>
     <% end %>
-    <%= f.submit "Like" %>
-    <% end %>
-    <%= link_to "Shuffle", "", class: "btn-black" %>
+    <%= link_to "Shuffle", "", class: "btn-black", remote: true %>
   </div>
 </div>
 
