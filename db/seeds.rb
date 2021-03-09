@@ -230,3 +230,4 @@ puts "there are #{Bar.count} bars"
 p Restaurant.all
 
 p Bar.all
+
