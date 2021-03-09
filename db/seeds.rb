@@ -38,8 +38,8 @@ events.each do |event|
   #activity.  = event['schedules'][0]['place']['lng']
   activity.website  = event['website']
   # activity.  = event['tags']
-  activity.photo = "https://source.unsplash.com/random(400x400)"
-  # activity.photo = event['images'][0]['url'] rescue ""
+  # activity.photo = "https://source.unsplash.com/random(400x400)"
+  activity.photo.nil? ? activity.photo = "https://unsplash.com/photos/F2KRf_QfCqw" : activity.photo = event['images'][0]['url'] 
   puts activity.valid?
   activity.save!
 end
@@ -73,6 +73,7 @@ places = JSON.parse(place_serialized.body)
       # # restaurant.closing_time = place['schedules'][0]['end_ts'].strip
       restaurant.address  = place['address'].strip
       restaurant.town  = place['town'].strip
+      restaurant.photo = "https://unsplash.com/photos/N_Y88TWmGwA"
       # restaurant.post_code  = place['schedules'][0]['place']['postal_code'].strip
       # place.website  = restaurant['website']
       puts restaurant.valid?
@@ -86,6 +87,7 @@ places = JSON.parse(place_serialized.body)
       # # bar.closing_time = place['schedules'][0]['end_ts'].strip
       bar.address  = place['address'].strip
       bar.town  = place['town'].strip
+      # bar.photo = "https://unsplash.com/photos/_wdOjxXPxUU"
       # bar.post_code  = place['schedules'][0]['place']['postal_code'].strip
       # place.website  = bar['website']
       puts bar.valid?
