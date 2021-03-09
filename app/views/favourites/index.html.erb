@@ -1,8 +1,40 @@
 <h1>Favourites page</h1>
 
-<% @favourites.each do |favourite| %>
-  <%= favourite.restaurant.name %>
-  <%= favourite.bar.name %>
-  <%= favourite.activity.name %>
-  <%= link_to "Delete", favourite_path(favourite), method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
+
+<div class="container">
+
+  <% @favourites.each do |favourite| %>
+    <div class="row justify-content-center">
+      <div class="main_card">
+        <div class="restaurant">
+          <img src="https://source.unsplash.com/random/200x200" alt="restaurant image">
+          <div class="restaurant-info">
+            <div>
+              <h2><%= favourite.restaurant.name %></h2>
+            </div>
+          </div>
+        </div>
+        <div class="bar">
+          <img src="https://source.unsplash.com/random/200x200" alt="restaurant image">
+          <div class="bar-info">
+            <div>
+              <h2><%= favourite.bar.name %></h2>
+            </div>
+          </div>
+        </div>
+        <div class="activity">
+          <img src="https://source.unsplash.com/random/200x200" alt="restaurant image">
+          <div class="activity-info">
+            <div>
+              <h2><%= favourite.activity.name %></h2>
+            </div>
+          </div>
+        </div>
+        <%= link_to "Delete", favourite_path(favourite), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-black" %>
+      </div>
+  <% end %>
+</div>
+
+
+
+

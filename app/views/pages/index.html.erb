@@ -1,21 +1,65 @@
-<h1>Show card page</h1>
+<h1>Explore Options</h1>
 
-<%# <%= link_to "star", favourites_path(restaurant_id: @restaurant.id, bar_id: @bar.id, activity_id: @activity.id), method: :post %> 
+<%# <%= link_to "star", favourites_path(restaurant_id: @restaurant.id, bar_id: @bar.id, activity_id: @activity.id), method: :post %>
 
-<%= form_with model: Favourite.new do |f| %>
-  <%= f.hidden_field :restaurant_id, value: @restaurant.id %>
-  <%= f.hidden_field :bar_id, value: @bar.id %>
-  <%= f.hidden_field :activity_id, value: @activity.id %>
-  <% if current_user %>
-    <%= f.hidden_field :user_id, value: current_user.id %>
-  <% end %>
-  <%= f.submit "submit" %>
-<% end %>
+<div class="main_card">
+  <div class="restaurant">
+    <img src="https://source.unsplash.com/random/200x200" alt="restaurant image">
+    <div class="restaurant-info">
+      <div>
+        <h2><%= @restaurant.name %></h2>
+        <p><%= @restaurant.address %></p>
+        <p><%= @restaurant.description %></p>
+      </div>
+      <div>
+        <a class="btn-link" href="<%= @restaurant.website %>">See more</a>
+      </div>
+    </div>
+  </div>
+  <div class="bar">
+    <img src="https://source.unsplash.com/random/200x200" alt="restaurant image">
+    <div class="bar-info">
+      <div>
+        <h2><%= @bar.name %></h2>
+        <p><%= @bar.address %></p>
+        <p><%= @bar.description %></p>
+      </div>
+      <div>
+        <a class="btn-link" href="<%= @bar.website %>">See more</a>
+      </div>
+    </div>
+  </div>
+  <div class="activity">
+    <img src="https://source.unsplash.com/random/200x200" alt="restaurant image">
+    <div class="activity-info">
+      <div>
+        <h2><%= @activity.name %></h2>
+        <p><%= @activity.address %></p>
+        <p><%= @activity.description.truncate(100) %></p>
+      </div>
+      <div>
+        <a class="btn-link" href="<%= @activity.website %>">See more</a>
+      </div>
+    </div>
+  </div>
+  <div class="justify-space-between">
+    <%= form_with model: Favourite.new do |f| %>
+    <%= f.hidden_field :restaurant_id, value: @restaurant.id %>
+    <%= f.hidden_field :bar_id, value: @bar.id %>
+    <%= f.hidden_field :activity_id, value: @activity.id %>
+    <% if current_user %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+    <% end %>
+    <%= f.submit "Like" %>
+    <% end %>
+    <%= link_to "Shuffle", "", class: "btn-black" %>
+  </div>
+</div>
 
-<%= @restaurant.name %> <br>
 
-<%= @bar.name %> <br>
+<%# <button class = 'results-reload'>Click to Reload</button> %>
 
-<%= @activity.name %>
+<%# <button type="submit" onClick=“reload()”>Refresh Button</button> %>
 
-<%= link_to "Refresh", "" %>
+<%# <button onclick='reloadDIV ();'>reload div</button> %>
+
