@@ -46,7 +46,6 @@ end
 
 puts "there are #{Activity.count} activities"
 
-
 Restaurant.destroy_all
 Bar.destroy_all
 
@@ -231,3 +230,4 @@ puts "there are #{Bar.count} bars"
 p Restaurant.all
 
 p Bar.all
+
