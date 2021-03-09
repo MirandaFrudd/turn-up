@@ -25,10 +25,19 @@ require("channels")
 // External imports
 import "bootstrap";
 
+
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+// import { reload } from '../components/lock';
+// import { updateDiv } from '../components/lock';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  // if (document.querySelector('.results-reload')) {
+  //   reload();
+  // }
+  // if (document.querySelector('.refresh')) {
+  //   updateDiv();
+  // }
 });

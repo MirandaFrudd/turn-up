@@ -1,17 +1,26 @@
-<%= render 'shared/banner' %>
+<%# <%= render 'shared/banner' %> 
 
-  <div class="container home-form">
-    <div class="form-row justify-content-center">
+<div class = "banner-home">
+  <div class="container">
+    <div class = "home-text">
+      <h1 style = "margin-bottom: 8px;">Turn-Up</h1>
+      <h3>Let us spoil you with options</h3>
+    </div>
+    <div class="form-row justify-content-center pt-4">
       <div div class="col-6">
-        <%= form_tag pages_path, method: :get do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "City"
-          %>
-          <%= submit_tag "Search", class: "btn btn-primary mt-4" %>
-        <% end %>
+        <div class = "card-home">
+          <%= form_tag pages_path, method: :get do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Search by city"
+            %>
+            <%= submit_tag "Start the fun!", class: "home-button" %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
+</div>
+
 
