@@ -1,8 +1,8 @@
 
 .main_card {
-  width: 621px;
-  height: 922px;
-  background: #f9f871;
+  width: 800px;
+  height: 700px;
+  background: $swiss-coffee;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   padding: 8px;
   border-radius: 5px;
@@ -11,7 +11,7 @@
 
 .restaurant {
   overflow: hidden;
-  height: 240px;
+  height: 180px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   display: flex;
@@ -20,6 +20,7 @@
   margin: 24px;
   border-radius: 5px;
   color: black;
+  text-align: top;
 
   // .restaurant_info {
   //   padding: 16px;
@@ -33,6 +34,7 @@
 .btn-link {
     color: white;
     padding: 8px 24px;
+    margin-right: 5px;
     border-radius: 4px;
     background: #fd3a69;
     transition: background 0.3s ease;
@@ -47,7 +49,7 @@
 
 .bar {
   overflow: hidden;
-  height: 240px;
+  height: 180px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   display: flex;
@@ -56,10 +58,11 @@
   margin: 24px;
   border-radius: 5px;
   color: black;
+  text-align: top;
 }
 .activity {
   overflow: hidden;
-  height: 240px;
+  height: 180px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   display: flex;
@@ -68,9 +71,11 @@
   margin: 24px;
   border-radius: 5px;
   color: black;
+  text-align: top;
 }
 img {
   margin-right: 16px;
+  margin-top: 8px;
 }
 
 input[type=submit], .btn-black {
