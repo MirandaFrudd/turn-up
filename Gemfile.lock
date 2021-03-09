@@ -81,7 +81,7 @@ GEM
     execjs (2.7.0)
     faker (2.16.0)
       i18n (>= 1.6, < 2)
-    ffi (1.14.2)
+    ffi (1.15.0)
     font-awesome-sass (5.15.1)
       sassc (>= 1.11)
     globalid (0.4.2)
@@ -106,7 +106,7 @@ GEM
     mini_portile2 (2.5.0)
     minitest (5.14.4)
     msgpack (1.4.2)
-    nio4r (2.5.5)
+    nio4r (2.5.7)
     nokogiri (1.11.1)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
@@ -242,4 +242,4 @@ RUBY VERSION
    ruby 2.6.6p146
 
 BUNDLED WITH
-   2.2.11
+   2.1.4
