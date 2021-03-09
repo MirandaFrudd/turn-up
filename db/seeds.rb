@@ -10,6 +10,7 @@ require 'net/http'
 require 'faker'
 require 'open-uri'
 
+Favourite.destroy_all
 Activity.destroy_all
 
 event_url = 'https://api.list.co.uk/v1/events?location=London'
