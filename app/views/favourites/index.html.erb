@@ -6,7 +6,10 @@
       <div id="fave-card">
         <i class="fas fa-heart fave-heart"></i>
         <div class="item">
-          <img src="https://source.unsplash.com/random/200x200" alt="restaurant image" class="fave-img">
+          <div class="fave-img">
+          <%= image_tag favourite.restaurant.photo, width: 80, crop: :fill %>
+          </div>
+<!--           <img src="https://source.unsplash.com/random/200x200" alt="restaurant image" class="fave-img"> -->
           <div class="fave-info">
             <div>
               <h2>Where to eat:</h2>
@@ -15,7 +18,10 @@
           </div>
         </div>
         <div class="item">
-          <img src="https://source.unsplash.com/random/200x200" alt="restaurant image" class="fave-img">
+          <div class="fave-img">
+          <%= image_tag favourite.bar.photo, width: 80, crop: :fill %>
+          </div>
+          <!-- <img src="https://source.unsplash.com/random/200x200" alt="restaurant image" class="fave-img"> -->
           <div class="fave-info">
             <div>
               <h2>Where to drink:</h2>
@@ -24,7 +30,10 @@
           </div>
         </div>
         <div class="item">
-          <img src="https://source.unsplash.com/random/200x200" alt="restaurant image" class="fave-img">
+          <div class="fave-img">
+          <%= image_tag favourite.activity.photo, width: 80, crop: :fill %>
+          </div>
+          <!-- <img src="https://source.unsplash.com/random/200x200" alt="restaurant image" class="fave-img"> -->
           <div class="fave-info">
             <div>
               <h2>What to do:</h2>

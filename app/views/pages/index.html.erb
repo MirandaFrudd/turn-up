@@ -22,7 +22,7 @@
         <div>
           <h2><%= @restaurant.name %></h2>
           <p><%= @restaurant.address %></p>
-          <p><%= @restaurant.description %></p>
+          <p><%= @restaurant.description.truncate(70) %></p>
         </div>
 <!--         <div>
           <a class="btn-link" href="<%= @restaurant.website %>">See more</a>
@@ -35,7 +35,7 @@
         <div>
           <h2><%= @bar.name %></h2>
           <p><%= @bar.address %></p>
-          <p><%= @bar.description %></p>
+          <p><%= @bar.description.truncate(70) %></p>
         </div>
 <!--         <div>
           <a class="btn-link" href="<%= @bar.website %>">See more</a>
@@ -48,7 +48,7 @@
         <div>
           <h2><%= @activity.name %></h2>
           <p><%= @activity.address %></p>
-          <p><%= @activity.description.truncate(100) %></p>
+          <p><%= @activity.description.truncate(70) %></p>
         </div>
 <!--         <div>
           <a class="btn-link" href="<%= @activity.website %>">See more</a>
