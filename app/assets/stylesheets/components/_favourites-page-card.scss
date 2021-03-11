@@ -3,6 +3,7 @@
   display: flex;
   margin-bottom: 20px;
   border-radius: 5px;
+  color: #000000E6;
 }
 
 .item h2{
@@ -11,11 +12,20 @@
 
 
 #fave-card {
+  // width: 300px;
   background: #E2DDD7;
   padding: 20px 15px 20px 15px;
   border-radius: 5px;
   margin: 20px 15px 20px 15px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
 }
+
+// @media (max-width: 1000px){
+// .item h2{
+//     font-size: 10px;
+//   }
+//   }
 
 .fave-img{
   height: 80px;
@@ -36,6 +46,8 @@
   color: white;
   border-radius: 4px;
   text-decoration: none;
+  display: flex;
+  justify-content: center;
 
   &:hover {
       background: #992A17;
@@ -49,4 +61,11 @@
   padding: 25px;
   display: flex;
   justify-content: center;
+}
+
+.fave-heart {
+  color: #D33F49;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
 }
