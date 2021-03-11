@@ -1,7 +1,7 @@
 
 .main_card {
-  width: 800px;
-  height: 700px;
+  width: 600px;
+  height: 720px;
   background: $swiss-coffee;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   padding: 8px;
@@ -17,7 +17,7 @@
   display: flex;
   align-items: center;
   padding: 12px;
-  margin: 24px;
+  margin: 12px;
   border-radius: 5px;
   color: black;
   text-align: top;
@@ -55,12 +55,13 @@
   display: flex;
   align-items: center;
   padding: 12px;
-  margin: 24px;
+  margin: 12px;
   border-radius: 5px;
   color: black;
   text-align: top;
 }
 .activity {
+  overflow: hidden;
   overflow: hidden;
   height: 180px;
   background: white;
@@ -68,17 +69,18 @@
   display: flex;
   align-items: center;
   padding: 12px;
-  margin: 24px;
+  margin: 12px;
   border-radius: 5px;
   color: black;
   text-align: top;
 }
+
 img {
   margin-right: 16px;
   margin-top: 8px;
 }
 
-input[type=submit], .btn-black {
+.btn-red {
   // display: flex;
   // background-color: black;
   // color: white;
@@ -96,12 +98,14 @@ input[type=submit], .btn-black {
   border: none;
   color: white;
   padding: 8px 32px;
-  margin-top: 12px;
+  margin-top: 4px;
+  margin-bottom: 4px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
 
 
   &:hover {
@@ -111,6 +115,26 @@ input[type=submit], .btn-black {
     // border: solid;
     background-color: $coral-red;
   text-decoration: none;
+  }
+}
+
+.btn-star {
+  background-color: $coral-red;
+  border: none;
+  color: yellow;
+  padding: 8px 32px;
+  margin-top: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 32px;
+  border-radius: 5px;
+
+
+  &:hover {
+  background-color: $coral-red;
+  text-decoration: none;
+  color: white;
   }
 }
 
