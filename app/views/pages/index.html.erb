@@ -15,7 +15,7 @@
       <% end %>
     </div>
     <div class="restaurant">
-      <img src="https://source.unsplash.com/random/200x200" alt="restaurant image">
+      <%= image_tag @restaurant.photo, width: 200, crop: :fill %>
       <div class="restaurant-info">
         <div>
           <h2><%= @restaurant.name %></h2>
@@ -28,7 +28,7 @@
       </div>
     </div>
     <div class="bar">
-      <img src="https://source.unsplash.com/random/200x200" alt="restaurant image">
+      <%= image_tag @bar.photo, width: 200, crop: :fill %>
       <div class="bar-info">
         <div>
           <h2><%= @bar.name %></h2>
@@ -41,7 +41,7 @@
       </div>
     </div>
     <div class="activity">
-      <img src="https://source.unsplash.com/random/200x200" alt="restaurant image">
+      <%= image_tag @activity.photo, width: 200, crop: :fill %>
       <div class="activity-info">
         <div>
           <h2><%= @activity.name %></h2>
