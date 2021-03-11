@@ -10,6 +10,13 @@
 # require 'faker'
 # require 'open-uri'
 
+
+
+Favourite.destroy_all
+Activity.destroy_all
+Restaurant.destroy_all
+Bar.destroy_all
+
 # Activity.destroy_all
 
 # event_url = 'https://api.list.co.uk/v1/events?location=London'
@@ -64,6 +71,7 @@
 
 # restaurant_photo = URI.open('https://unsplash.com/photos/N_Y88TWmGwA')
 
+
 #   places.each do |place|
 #     if place['tags'].include? 'restaurants'
 #       restaurant = Restaurant.new
@@ -97,9 +105,7 @@
 #       bar.save!
 #     end
 #   end
-Activity.destroy_all
-Restaurant.destroy_all
-Bar.destroy_all
+
 
 # BARS
 bar1 = Bar.new(
