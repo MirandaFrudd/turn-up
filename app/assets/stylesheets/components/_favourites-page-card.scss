@@ -1,6 +1,8 @@
 .item {
-  height: 122px;
+  height: 80px;
   display: flex;
+  margin-bottom: 20px;
+  border-radius: 5px;
 }
 
 .item h2{
@@ -9,23 +11,23 @@
 
 
 #fave-card {
-  width: 350px;
-  height: 400px;
   background: #E2DDD7;
-  // box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  padding: 12px;
+  padding: 20px 15px 20px 15px;
   border-radius: 5px;
-  margin: 10px;
+  margin: 20px 15px 20px 15px;
 }
 
 .fave-img{
   height: 80px;
+  margin: 0px;
+  padding: 0px;
 }
 
 .fave-info{
-  background-color: white;
+  background-color: #F4F4F4;
   height: 80px;
   width: 100%;
+  padding: 10px;
 }
 
 .fave-btn{
@@ -42,96 +44,9 @@
     }
 }
 
-// img {
-//   margin-right: 16px;
-//   height: 122px;
-// }
-
-// .restaurant {
-//   overflow: hidden;
-//   height: 240px;
-//   background: white;
-//   box-shadow: 0 0 15px rgba(0,0,0,0.1);
-//   display: flex;
-//   align-items: center;
-//   padding: 12px;
-//   margin: 24px;
-//   border-radius: 5px;
-//   color: black;
-
-//   // .restaurant_info {
-//   //   padding: 16px;
-//   //   display: flex;
-//   //   justify-content: space-between;
-//   //   align-items: flex-end;
-//   //   position: relative;
-//   // }
-// }
-
-// .btn-link {
-//     color: white;
-//     padding: 8px 24px;
-//     border-radius: 4px;
-//     background: #fd3a69;
-//     transition: background 0.3s ease;
-
-//     &:hover {
-//       color: #fd3a69;
-//       background: white;
-//       text-decoration: none;
-//       border: solid;
-//     }
-// }
-
-// .bar {
-//   overflow: hidden;
-//   height: 240px;
-//   background: white;
-//   box-shadow: 0 0 15px rgba(0,0,0,0.1);
-//   display: flex;
-//   align-items: center;
-//   padding: 12px;
-//   margin: 24px;
-//   border-radius: 5px;
-//   color: black;
-// }
-// .activity {
-//   overflow: hidden;
-//   height: 240px;
-//   background: white;
-//   box-shadow: 0 0 15px rgba(0,0,0,0.1);
-//   display: flex;
-//   align-items: center;
-//   padding: 12px;
-//   margin: 24px;
-//   border-radius: 5px;
-//   color: black;
-// }
-// img {
-//   margin-right: 16px;
-// }
-
-// input[type=submit], .btn-black {
-//   display: flex;
-//   background-color: black;
-//   color: white;
-//   width: 100px;
-//   padding: 8px 24px;
-//   text-decoration: none;
-//   margin: 4px;
-//   // cursor: pointer;
-//   border-radius: 5px;
-//   justify-content: space-between;
-//   text-align: center;
-//   align-items: flex-end;
-//   position: relative;
-
-
-//   &:hover {
-//     text-decoration: none;
-//     background-color: white;
-//     color: black;
-//     border: solid;
-//   }
-// }
-
+.back-button {
+  align: center;
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+}
