@@ -11,48 +11,79 @@
       <% if current_user %>
         <%= f.hidden_field :user_id, value: current_user.id %>
       <% end %>
+      <%# <button type="submit" class="btn-star">
+        <i class="fas fa-star"></i> 
+      </button> %>
       <button type="submit" class="btn-star">
-        <i class="fas fa-star"></i>
+        <span class="material-icons md-64 md-red">star_rate</span>
       </button>
+      <%# <input class="btn-star" type="submit" value=""> %>
       <% end %>
     </div>
     <div class="restaurant">
-      <%= image_tag @restaurant.photo, width: 200, crop: :fill %>
-      <div class="restaurant-info">
-        <div>
-          <h2><%= @restaurant.name %></h2>
-          <p><%= @restaurant.address %></p>
-          <p><%= @restaurant.description.truncate(70) %></p>
-        </div>
-<!--         <div>
-          <a class="btn-link" href="<%= @restaurant.website %>">See more</a>
-        </div>
- -->      </div>
+      <div class="card-element">
+        <%= image_tag @restaurant.photo, class:"cover" %>
+        <div class="card-element-content">
+          <div>
+            <div class="card-element-top">
+              <div>
+                <h3><strong><%= @restaurant.name %></strong></h3>
+                <p><%= @restaurant.address.truncate(50) %></p>
+              </div>
+              <div class="restaurant-icon">
+                <span class="material-icons md-36 md-red center">restaurant</span>
+              </div>
+            </div>
+            <p><%= @restaurant.description.truncate(80) %></p>
+          </div>
+    <!--    <div>
+              <a class="btn-link" href="<%= @restaurant.website %>">See more</a>
+            </div>
+  -->  </div>
+      </div>
     </div>
     <div class="bar">
-      <%= image_tag @bar.photo, width: 200, crop: :fill %>
-      <div class="bar-info">
-        <div>
-          <h2><%= @bar.name %></h2>
-          <p><%= @bar.address %></p>
-          <p><%= @bar.description.truncate(70) %></p>
+      <div class = "card-element">
+        <%= image_tag @bar.photo, class:"cover" %>
+        <div class="card-element-content">
+          <div>
+            <div class="card-element-top">
+              <div>
+                <h3><strong><%= @bar.name %></strong></h3>
+                <p><%= @bar.address.truncate(50) %></p>
+              </div>
+              <div class="bar-icon">
+                <span class="material-icons md-36 md-red">local_bar</span>
+              </div>
+            </div>
+            <p><%= @bar.description.truncate(80) %></p>
+          </div>
+    <!--    <div>
+              <a class="btn-link" href="<%= @bar.website %>">See more</a>
+            </div> -->
         </div>
-<!--         <div>
-          <a class="btn-link" href="<%= @bar.website %>">See more</a>
-        </div> -->
       </div>
     </div>
     <div class="activity">
-      <%= image_tag @activity.photo, width: 200, crop: :fill %>
-      <div class="activity-info">
-        <div>
-          <h2><%= @activity.name %></h2>
-          <p><%= @activity.address %></p>
-          <p><%= @activity.description.truncate(70) %></p>
+      <div class = "card-element">
+        <%= image_tag @activity.photo, class:"cover" %>
+        <div class="card-element-content">
+          <div>
+            <div class="card-element-top">
+              <div>
+                <h3><strong><%= @activity.name %></strong></h3>
+                <p><%= @activity.address.truncate(50) %></p>
+              </div>
+              <div class="activity-icon">
+                <span class="material-icons md-36 md-red">attractions</span>
+              </div>
+            </div>
+            <p><%= @activity.description.truncate(80) %></p>
+          </div>
+    <!--    <div>
+              <a class="btn-link" href="<%= @activity.website %>">See more</a>
+            </div> -->
         </div>
-<!--         <div>
-          <a class="btn-link" href="<%= @activity.website %>">See more</a>
-        </div> -->
       </div>
     </div>
     <div class="d-flex justify-content-center">
@@ -66,5 +97,5 @@
 
 <%# <button type="submit" onClick=“reload()”>Refresh Button</button> %>
 
-<%# <button onclick='reloadDIV ();'>reload div</button> %>
-
+<%# <button onclick="updateDiv();">reload div</button> %>
+<button type="button" onclick="updateDiv();">Update</button>

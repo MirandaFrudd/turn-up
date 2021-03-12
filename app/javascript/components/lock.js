@@ -15,8 +15,9 @@ function reload() {
 
 export { reload };
 
-function updateDiv() {
-  $(".refresh").load(window.location.href + " .refresh > *");
-};
+// function updateDiv() {
+//   $(".activity").load("window.location.href .activity");
+//   console.log(document.querySelector(".activity"))
+// };
 
-export { updateDiv };
+// export { updateDiv };

@@ -1,4 +1,5 @@
 .banner-home {
+  background-image: image_url("having-fun.png");
   background-size: cover;
   background-position: center;
   padding-top: 96px;
@@ -11,7 +12,7 @@
 }
 
 .card-home {
-  background-color: $medium-grey;
+  background-color: $swiss-coffee;
   padding: 20px;
   position: relative;
   top: 40px;
@@ -23,7 +24,7 @@
   border: none;
   color: white;
   padding: 8px 8px;
-  margin: 12px;
+  margin: 12px 0px 0px 0px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
