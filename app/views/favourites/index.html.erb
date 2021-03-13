@@ -3,7 +3,7 @@
 <div class="row align-items-start">
   <% @favourites.each do |favourite| %>
    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-      <div id="fave-card">
+      <div class="fave-card">
         <div class="fave-star">
           <span class="material-icons md-48 md-red">star_rate</span>
         </div>
@@ -46,7 +46,10 @@
               </div>
           </div>
         </div>
+        <a href="whatsapp://send?text=www.turn-up-london.com/favourites/<%= favourite.id %>" class="your_class">Share on <i class="fab fa-whatsapp"></i></a>
         <%= link_to "Delete", favourite_path(favourite), method: :delete, data: { confirm: 'Are you sure?' }, class: "fave-btn" %>
+
+
       </div>
       </div>
   <% end %>
