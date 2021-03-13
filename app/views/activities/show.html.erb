@@ -39,4 +39,11 @@
     </table>
     <%= link_to "Discovery page", pages_path %> <br>
     <%= link_to "Favourites", favourites_path %>
+
+    <h1>Reviews</h1>
+    <% @activity.reviews.each do |review| %>
+    <%= review.rating %> <br>
+    <%= review.title %> <br>
+    <%= review.description %> <br>
+    <% end %>
   </div>

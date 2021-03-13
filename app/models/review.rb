@@ -1,6 +1,6 @@
 class Review < ApplicationRecord
-  belongs_to :user
-  belongs_to :bar
-  belongs_to :restaurant
-  belongs_to :activity
+  belongs_to :user, optional: true
+  belongs_to :bar, optional: true
+  belongs_to :restaurant,  optional: true
+  belongs_to :activity,  optional: true
 end
