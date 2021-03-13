@@ -12,7 +12,7 @@
         <%= f.hidden_field :user_id, value: current_user.id %>
       <% end %>
       <%# <button type="submit" class="btn-star">
-        <i class="fas fa-star"></i> 
+        <i class="fas fa-star"></i>
       </button> %>
       <button type="submit" class="btn-star">
         <span class="material-icons md-64 md-red">star_rate</span>
@@ -22,7 +22,7 @@
     </div>
     <div class="restaurant">
       <div class="card-element">
-        <%= image_tag @restaurant.photo, class:"cover" %>
+        <%= cl_image_tag @restaurant.photo.key, class:"cover" %>
         <div class="card-element-content">
           <div>
             <div class="card-element-top">
@@ -44,7 +44,7 @@
     </div>
     <div class="bar">
       <div class = "card-element">
-        <%= image_tag @bar.photo, class:"cover" %>
+        <%= cl_image_tag @bar.photo.key, class:"cover" %>
         <div class="card-element-content">
           <div>
             <div class="card-element-top">
@@ -66,7 +66,7 @@
     </div>
     <div class="activity">
       <div class = "card-element">
-        <%= image_tag @activity.photo, class:"cover" %>
+        <%= cl_image_tag @activity.photo.key, class:"cover" %>
         <div class="card-element-content">
           <div>
             <div class="card-element-top">
