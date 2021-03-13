@@ -1,4 +1,5 @@
 class FavouritesController < ApplicationController
+  skip_before_action :authenticate_user!, only: :show
   before_action :set_favourite, only: [:show]
   def index
     @favourites = Favourite.all
