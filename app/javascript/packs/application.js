@@ -31,6 +31,7 @@ import "vivid-icons";
 // import { initSelect2 } from '../components/init_select2';
 // import { reload } from '../components/lock';
 // import { updateDiv } from '../components/lock';
+import { addLocks, load } from '../components/lock';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -41,4 +42,12 @@ document.addEventListener('turbolinks:load', () => {
   // // if (document.querySelector('.refresh')) {
   // //   updateDiv();
   // }
+  const shuffle = document.getElementById("shuffle")
+  if (shuffle) {
+    addLocks()
+    shuffle.addEventListener("click", () => {
+      console.log("hello")
+      load();
+    })
+  }
 });

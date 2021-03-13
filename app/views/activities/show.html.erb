@@ -1,0 +1,49 @@
+  <div>
+    <h1><%= @activity.name %></h1>
+    <p>
+      <%= @activity.description %>
+    </p>
+    <table>
+      <tr>
+        <th>Address:</th>
+        <td><%= @activity.address %></td>
+      </tr>
+      <tr>
+        <th>Town:</th>
+        <td><%= @activity.town %></td>
+      </tr>
+      <tr>
+        <th>Postcode:</th>
+        <td><%= @activity.post_code %></td>
+      </tr>
+      <tr>
+        <th>Budget:</th>
+        <td><%= @activity.budget %></td>
+      </tr>
+      <tr>
+        <th>Day:</th>
+        <td><%= @activity.day %></td>
+      </tr>
+      <tr>
+        <th>Night:</th>
+        <td><%= @activity.night %></td>
+      </tr>
+      <tr>
+        <th>Website:</th>
+        <td><%= @activity.website %></td>
+      </tr>
+      <tr>
+        <th>Photo:</th>
+        <td><%= @activity.photo %></td>
+      </tr>
+    </table>
+    <%= link_to "Discovery page", pages_path %> <br>
+    <%= link_to "Favourites", favourites_path %>
+
+    <h1>Reviews</h1>
+    <% @activity.reviews.each do |review| %>
+    <%= review.rating %> <br>
+    <%= review.title %> <br>
+    <%= review.description %> <br>
+    <% end %>
+  </div>

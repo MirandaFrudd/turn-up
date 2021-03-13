@@ -20,9 +20,9 @@
       <%# <input class="btn-star" type="submit" value=""> %>
       <% end %>
     </div>
-    <div class="restaurant">
+    <div class="restaurant" id="shuffle-rest">
       <div class="card-element">
-        <%= image_tag @restaurant.photo, class:"cover" %>
+        <%= cl_image_tag @restaurant.photo.key, class:"cover" %>
         <div class="card-element-content">
           <div>
             <div class="card-element-top">
@@ -51,9 +51,10 @@
   -->  </div>
       </div>
     </div>
-    <div class="bar">
+    <div id="lock-rest" class="my-5">Lock-rest</div>
+    <div class="bar" id="shuffle-bar">
       <div class = "card-element">
-        <%= image_tag @bar.photo, class:"cover" %>
+        <%= cl_image_tag @bar.photo.key, class:"cover" %>
         <div class="card-element-content">
           <div>
             <div class="card-element-top">
@@ -82,9 +83,10 @@
         </div>
       </div>
     </div>
-    <div class="activity">
+    <div id="lock-bar" class="my-5">Lock-bar</div>
+    <div class="activity" id="shuffle-activity">
       <div class = "card-element">
-        <%= image_tag @activity.photo, class:"cover" %>
+        <%= cl_image_tag @activity.photo.key, class:"cover" %>
         <div class="card-element-content">
           <div>
             <div class="card-element-top">
@@ -113,6 +115,7 @@
         </div>
       </div>
     </div>
+    <div id="lock-activity" class="my-5">Lock-activity</div>
     <div class="d-flex justify-content-center">
       <%= link_to "Shuffle", "", class: "btn-red" %>
     </div>
@@ -125,4 +128,4 @@
 <%# <button type="submit" onClick=“reload()”>Refresh Button</button> %>
 
 <%# <button onclick="updateDiv();">reload div</button> %>
-<button type="button" onclick="updateDiv();">Update</button>
+<button type="button" id="shuffle">Update</button>

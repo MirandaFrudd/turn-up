@@ -1,0 +1,49 @@
+  <div>
+    <h1><%= @restaurant.name %></h1>
+    <p>
+      <%= @restaurant.description %>
+    </p>
+    <table>
+      <tr>
+        <th>Address:</th>
+        <td><%= @restaurant.address %></td>
+      </tr>
+      <tr>
+        <th>Town:</th>
+        <td><%= @restaurant.town %></td>
+      </tr>
+      <tr>
+        <th>Postcode:</th>
+        <td><%= @restaurant.post_code %></td>
+      </tr>
+      <tr>
+        <th>Budget:</th>
+        <td><%= @restaurant.budget %></td>
+      </tr>
+      <tr>
+        <th>Day:</th>
+        <td><%= @restaurant.day %></td>
+      </tr>
+      <tr>
+        <th>Night:</th>
+        <td><%= @restaurant.night %></td>
+      </tr>
+      <tr>
+        <th>Website:</th>
+        <td><%= @restaurant.website %></td>
+      </tr>
+      <tr>
+        <th>Photo:</th>
+        <td><%= @restaurant.photo %></td>
+      </tr>
+    </table>
+    <%= link_to "Discovery page", pages_path %> <br>
+    <%= link_to "Favourites", favourites_path %>
+
+    <h1>Reviews</h1>
+    <% @restaurant.reviews.each do |review| %>
+    <%= review.rating %> <br>
+    <%= review.title %> <br>
+    <%= review.description %> <br>
+    <% end %>
+  </div>
