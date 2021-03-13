@@ -1,0 +1,5 @@
+meta_product_name: "TurnUp"
+meta_title: "TurnUp | for your best trip out"
+meta_description: "Take the stress out of planning city-trips, with turn up. Plan a unique day out for you and your friends, discover the best nightlife in a new place or see your own city from a different perspective."
+meta_image: "meta-image.png" # should exist in `app/assets/images/`
+# twitter_account: "@product_twitter_account"   # required for Twitter Cards
