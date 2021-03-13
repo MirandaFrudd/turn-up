@@ -1,3 +1,4 @@
+
 <h1>My Favourites</h1>
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -9,7 +10,7 @@
   <div class="carousel-inner">
     <% @favourites.each_with_index do |favourite, index| %>
       <div class="carousel-item <%= "active" if index == (@favourites.size - 1) %>">
-        <div id="fave-card">
+        <div class="fave-card">
           <div class="fave-star">
             <span class="material-icons md-48 md-red">star_rate</span>
           </div>
@@ -17,9 +18,7 @@
             <div class="fave-img">
             <%= cl_image_tag favourite.restaurant.photo.key, class:"cover" %>
             </div>
-  <!--           <img src="https://source.unsplash.com/random/200x200" alt="restaurant image" class="fave-img"> -->
             <div class="fave-info">
-              <%# <h2>Where to eat:</h2> %>
               <h2><%= favourite.restaurant.name %></h2>
               <div class="fave-restaurant-icon">
                 <span class="material-icons md-24 md-red center">restaurant</span>
@@ -30,9 +29,7 @@
             <div class="fave-img">
             <%= cl_image_tag favourite.bar.photo.key, class:"cover" %>
             </div>
-            <!-- <img src="https://source.unsplash.com/random/200x200" alt="restaurant image" class="fave-img"> -->
             <div class="fave-info">
-                <%# <h2>Where to drink:</h2> %>
                 <h2><%= favourite.bar.name %></h2>
                 <div class="fave-bar-icon">
                   <span class="material-icons md-24 md-red">local_bar</span>
@@ -52,11 +49,22 @@
                 </div>
             </div>
           </div>
-          <%= link_to "Delete", favourite_path(favourite), method: :delete, data: { confirm: 'Are you sure?' }, class: "fave-btn" %>
-        </div>
+            <div class="buttons">
+              <a href="whatsapp://send?text=www.turn-up-london.com/favourites/<%= favourite.id %>" class="fave-btn">Share on WhatsApp  <i class="fab fa-whatsapp"></i></a>
+              <%= link_to favourite_path(favourite), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <i class="fas fa-trash-alt" style="color:#9E8576"></i>
+              <% end %>
+            </div>
+          </div>
       </div>
     <% end %>
   </div>
+</div>
+
+
+      </div>
+    <!-- <%  %> -->
+  <!-- </div> -->
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
@@ -67,9 +75,6 @@
   </a>
 </div>
 
-<div class="back-button">
-  <%= link_to "Search again", pages_path, class: "fave-btn" %>
-</div>
 
 
 
