@@ -24,6 +24,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import "vivid-icons";
 
 
 // Internal imports, e.g:
@@ -37,7 +38,7 @@ document.addEventListener('turbolinks:load', () => {
   // if (document.querySelector('.results-reload')) {
   //   reload();
   // }
-  // if (document.querySelector('.refresh')) {
-  //   updateDiv();
+  // // if (document.querySelector('.refresh')) {
+  // //   updateDiv();
   // }
 });

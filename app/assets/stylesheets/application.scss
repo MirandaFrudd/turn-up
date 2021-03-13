@@ -15,23 +15,13 @@
 @import "components/footer";
 @import "components/form";
 
-h1 {
-  font-size: 24px;
-  font-family: 'Ubuntu', sans-serif;
-  font-weight: bold;
-  text-align: center;
-  padding: 15px;
+
+h1, h2, h3, p{
+  color: #464646
 }
 
-h2 {
-  font-size: 16px;
-  font-family: 'Ubuntu', sans-serif;
-  font-weight: bold;
+h3 {
+  font-size: 15px;
 }
-
-p {
-  font-family: 'Poppins', sans-serif;
-}
-
 
 
