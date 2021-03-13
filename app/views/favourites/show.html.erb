@@ -1,0 +1,47 @@
+  <div class="container">
+    <h1>Check this out!</h1>
+      <div class="fave-card">
+        <div class="fave-star">
+          <span class="material-icons md-48 md-red">star_rate</span>
+        </div>
+        <div class="item">
+          <div class="fave-img">
+          <%= image_tag @favourite.restaurant.photo, class:"cover" %>
+          </div>
+<!--           <img src="https://source.unsplash.com/random/200x200" alt="restaurant image" class="fave-img"> -->
+          <div class="fave-info">
+            <%# <h2>Where to eat:</h2> %>
+            <h2><%= @favourite.restaurant.name %></h2>
+            <div class="fave-restaurant-icon">
+              <span class="material-icons md-24 md-red center">restaurant</span>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="fave-img">
+          <%= image_tag @favourite.bar.photo, class:"cover" %>
+          </div>
+          <!-- <img src="https://source.unsplash.com/random/200x200" alt="restaurant image" class="fave-img"> -->
+          <div class="fave-info">
+              <%# <h2>Where to drink:</h2> %>
+              <h2><%= @favourite.bar.name %></h2>
+              <div class="fave-bar-icon">
+                <span class="material-icons md-24 md-red">local_bar</span>
+              </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="fave-img">
+          <%= image_tag @favourite.activity.photo, class:"cover" %>
+          </div>
+          <!-- <img src="https://source.unsplash.com/random/200x200" alt="restaurant image" class="fave-img"> -->
+          <div class="fave-info">
+              <%# <h2>What to do:</h2> %>
+              <h2><%= @favourite.activity.name %></h2>
+              <div class="fave-activity-icon">
+                <span class="material-icons md-24 md-red">attractions</span>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>

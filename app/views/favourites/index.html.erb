@@ -1,3 +1,4 @@
+
 <h1>My Favourites</h1>
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -12,6 +13,7 @@
         <div id="fave-card">
           <div class="fave-star">
             <span class="material-icons md-48 md-red">star_rate</span>
+
           </div>
           <div class="item">
             <div class="fave-img">
@@ -54,6 +56,17 @@
           </div>
           <%= link_to "Delete", favourite_path(favourite), method: :delete, data: { confirm: 'Are you sure?' }, class: "fave-btn" %>
         </div>
+
+        <div class="buttons">
+          <a href="whatsapp://send?text=www.turn-up-london.com/favourites/<%= favourite.id %>" class="fave-btn">Share on WhatsApp  <i class="fab fa-whatsapp"></i></a>
+          <%= link_to favourite_path(favourite), method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <i class="fas fa-trash-alt" style="color:#9E8576"></i>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
       </div>
     <% end %>
   </div>
@@ -65,11 +78,9 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
+
 </div>
 
-<div class="back-button">
-  <%= link_to "Search again", pages_path, class: "fave-btn" %>
-</div>
 
 
 

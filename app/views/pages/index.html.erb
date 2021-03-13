@@ -34,7 +34,16 @@
                 <span class="material-icons md-36 md-red center">restaurant</span>
               </div>
             </div>
-            <p><%= @restaurant.description.truncate(80) %></p>
+            <p><%= @restaurant.description.truncate(65) %></p>
+          </div>
+          <div class="main-card-icons">
+            <div class="budget">
+              <% @restaurant.budget.times { |i| puts %> <i class="fas fa-pound-sign"></i> <% } %>
+            </div>
+            <% if @restaurant.day && @restaurant.night %> <i class="fas fa-sun"></i> <i class="fas fa-moon"></i>
+            <% elsif @restaurant.night %> <i class="fas fa-sun" style="color:#f8f9fa"></i> <i class="fas fa-moon"></i>
+            <% else @restaurant.day %> <i class="fas fa-sun"></i> <i class="fas fa-moon" style="color:#f8f9fa"></i>
+            <% end %>
           </div>
     <!--    <div>
               <a class="btn-link" href="<%= @restaurant.website %>">See more</a>
@@ -57,7 +66,16 @@
                 <span class="material-icons md-36 md-red">local_bar</span>
               </div>
             </div>
-            <p><%= @bar.description.truncate(80) %></p>
+            <p><%= @bar.description.truncate(65) %></p>
+          </div>
+          <div class="main-card-icons">
+            <div class="budget">
+              <% @bar.budget.times { |i| puts %> <i class="fas fa-pound-sign"></i> <% } %>
+            </div>
+            <% if @bar.day && @bar.night %> <i class="fas fa-sun"></i> <i class="fas fa-moon"></i>
+              <% elsif @bar.night %> <i class="fas fa-sun" style="color:#f8f9fa"></i> <i class="fas fa-moon"></i>
+              <% else @bar.day %> <i class="fas fa-sun"></i> <i class="fas fa-moon" style="color:#f8f9fa"></i>
+            <% end %>
           </div>
     <!--    <div>
               <a class="btn-link" href="<%= @bar.website %>">See more</a>
@@ -80,7 +98,16 @@
                 <span class="material-icons md-36 md-red">attractions</span>
               </div>
             </div>
-            <p><%= @activity.description.truncate(80) %></p>
+            <p><%= @activity.description.truncate(50) %></p>
+          </div>
+          <div class="main-card-icons">
+            <div class="budget">
+              <% @activity.budget.times { |i| puts %> <i class="fas fa-pound-sign"></i> <% } %>
+            </div>
+            <% if @activity.day && @activity.night %> <i class="fas fa-sun"></i> <i class="fas fa-moon"></i>
+              <% elsif @activity.night %> <i class="fas fa-sun" style="color:#f8f9fa"></i> <i class="fas fa-moon"></i>
+              <% else @activity.day %> <i class="fas fa-sun"></i> <i class="fas fa-moon" style="color:#f8f9fa"></i>
+            <% end %>
           </div>
     <!--    <div>
               <a class="btn-link" href="<%= @activity.website %>">See more</a>
