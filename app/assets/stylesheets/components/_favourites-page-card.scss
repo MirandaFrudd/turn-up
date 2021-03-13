@@ -80,6 +80,11 @@
   justify-content: center;
 }
 
+.buttons{
+  display: flex;
+  justify-content: space-between;
+}
+
 .fave-heart {
   color: #D33F49;
   display: flex;

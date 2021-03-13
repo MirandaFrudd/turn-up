@@ -1,6 +1,9 @@
 <div class="container">
   <h1>My Favourites</h1>
 </div>
+<div class="back-button">
+  <%= link_to "Search again", pages_path, class: "fave-btn" %>
+</div>
 <div class="row align-items-start">
   <% @favourites.each do |favourite| %>
    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
@@ -10,7 +13,7 @@
         </div>
         <div class="item">
           <div class="fave-img">
-          <%= image_tag favourite.restaurant.photo, class:"cover" %>
+            <%= image_tag favourite.restaurant.photo, class:"cover" %>
           </div>
 <!--           <img src="https://source.unsplash.com/random/200x200" alt="restaurant image" class="fave-img"> -->
           <div class="fave-info">
@@ -47,19 +50,17 @@
               </div>
           </div>
         </div>
-        <a href="whatsapp://send?text=www.turn-up-london.com/favourites/<%= favourite.id %>" class="fave-btn">Share on WhatsApp  <i class="fab fa-whatsapp"></i></a>
-        <%= link_to favourite_path(favourite), method: :delete, data: { confirm: 'Are you sure?' } do %>
-          <i class="fas fa-trash-alt" style="color:#9E8576"></i>
-        <% end %>
-
+        <div class="buttons">
+          <a href="whatsapp://send?text=www.turn-up-london.com/favourites/<%= favourite.id %>" class="fave-btn">Share on WhatsApp  <i class="fab fa-whatsapp"></i></a>
+          <%= link_to favourite_path(favourite), method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <i class="fas fa-trash-alt" style="color:#9E8576"></i>
+          <% end %>
+        </div>
       </div>
-      </div>
+    </div>
   <% end %>
 </div>
 
-<div class="back-button">
-  <%= link_to "Search again", pages_path, class: "fave-btn" %>
-</div>
 
 
 
