@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+  get "/index_restaurant", to: "pages#index_restaurant"
+  get "/index_bar", to: "pages#index_bar"
+  get "/index_activity", to: "pages#index_activity"
   resources :pages, only: [:index, :profile]
   resources :favourites, only: [:index, :create, :destroy]
   resources :restaurants, :bars, :activities, only: [:show] do
