@@ -58,6 +58,7 @@ const loadRest = () => {
       console.log(data);
       document.getElementById("shuffle-rest").innerHTML = `
       <div class="card-element">
+      <img class="cover" src="http://res.cloudinary.com/dkzi7cweg/image/upload/${data.photo}">
         <div class="card-element-content">
           <div>
             <div class="card-element-top">
@@ -85,6 +86,7 @@ const loadBar = () => {
       console.log(data);
       document.getElementById("shuffle-bar").innerHTML = `
           <div class="card-element">
+          <img class="cover" src="http://res.cloudinary.com/dkzi7cweg/image/upload/${data.photo}">
             <div class="card-element-content">
               <div>
                 <div class="card-element-top">
@@ -112,6 +114,7 @@ const loadActivity = () => {
       console.log(data);
       document.getElementById("shuffle-activity").innerHTML = `
       <div class="card-element">
+      <img class="cover" src="http://res.cloudinary.com/dkzi7cweg/image/upload/${data.photo}">
         <div class="card-element-content">
           <div>
             <div class="card-element-top">

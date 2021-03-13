@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_06_132030) do
+ActiveRecord::Schema.define(version: 2021_03_13_161432) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,7 +51,6 @@ ActiveRecord::Schema.define(version: 2021_03_06_132030) do
     t.datetime "opening_time"
     t.datetime "closing_time"
     t.string "website"
-    t.string "photo"
   end
 
   create_table "bars", force: :cascade do |t|
@@ -67,7 +66,6 @@ ActiveRecord::Schema.define(version: 2021_03_06_132030) do
     t.string "town"
     t.string "post_code"
     t.string "website"
-    t.string "photo"
   end
 
   create_table "favourites", force: :cascade do |t|
@@ -96,7 +94,6 @@ ActiveRecord::Schema.define(version: 2021_03_06_132030) do
     t.string "town"
     t.string "post_code"
     t.string "website"
-    t.string "photo"
   end
 
   create_table "reviews", force: :cascade do |t|
