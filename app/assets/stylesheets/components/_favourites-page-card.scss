@@ -13,7 +13,7 @@
 
 .fave-card {
   width: 310px;
-  background: #E2DDD7;
+  background: $swiss-coffee;
   padding: 20px 15px 20px 15px;
   border-radius: 5px;
   // margin: 20px 15px 20px 15px;
@@ -47,7 +47,7 @@
 }
 
 .fave-info{
-  background-color: #F4F4F4;
+  background-color: $light-gray;
   height: 80px;
   width: 100%;
   padding: 10px;
@@ -57,7 +57,7 @@
 }
 
 .fave-btn{
-  background-color: #9E8576;
+  background-color: $light-caramel;
   padding: 6px;
   color: white;
   border-radius: 4px;
@@ -67,7 +67,7 @@
   margin-bottom: 10px;
 
   &:hover {
-      background: #C6B7A4;
+      background: $almond;
       text-decoration: none;
       color: white;
     }
@@ -86,7 +86,7 @@
 }
 
 .fave-heart {
-  color: #D33F49;
+  color: $coral-red;
   display: flex;
   justify-content: center;
   padding-bottom: 10px;
