@@ -12,25 +12,28 @@ class PagesController < ApplicationController
 
   def index_restaurant
     @restaurant = Restaurant.all.sample
+    @photo = @restaurant.photo.key
     respond_to do |format|
       format.html
-      format.json { render json: { restaurant: @restaurant } }
+      format.json { render json: { restaurant: @restaurant, photo: @photo } }
     end
   end
 
   def index_bar
     @bar = Bar.all.sample
+    @photo = @bar.photo.key
     respond_to do |format|
       format.html
-      format.json { render json: { bar: @bar } }
+      format.json { render json: { bar: @bar, photo: @photo } }
     end
   end
 
   def index_activity
     @activity = Activity.all.sample
+    @photo = @activity.photo.key
     respond_to do |format|
       format.html
-      format.json { render json: { activity: @activity } }
+      format.json { render json: { activity: @activity, photo: @photo } }
     end
   end
 
