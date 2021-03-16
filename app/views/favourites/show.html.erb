@@ -6,7 +6,7 @@
         </div>
         <div class="item">
           <div class="fave-img">
-          <%= image_tag @favourite.restaurant.photo, class:"cover" %>
+          <%= cl_image_tag @favourite.restaurant.photo.key, class:"cover" %>
           </div>
 <!--           <img src="https://source.unsplash.com/random/200x200" alt="restaurant image" class="fave-img"> -->
 
@@ -34,7 +34,7 @@
 
         <div class="item">
           <div class="fave-img">
-          <%= image_tag @favourite.bar.photo, class:"cover" %>
+          <%= cl_image_tag @favourite.bar.photo.key, class:"cover" %>
           </div>
           <!-- <img src="https://source.unsplash.com/random/200x200" alt="restaurant image" class="fave-img"> -->
           <div class="fave-info">
@@ -60,7 +60,7 @@
 
         <div class="item">
           <div class="fave-img">
-          <%= image_tag @favourite.activity.photo, class:"cover" %>
+          <%= cl_image_tag @favourite.activity.photo.key, class:"cover" %>
           </div>
           <!-- <img src="https://source.unsplash.com/random/200x200" alt="restaurant image" class="fave-img"> -->
           <div class="fave-info">
