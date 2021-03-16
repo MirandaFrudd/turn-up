@@ -2,6 +2,44 @@
   background-size: cover;
   background-position: center;
   padding: 208px 0;
-  background-color: #CDCDCD;
+  background-image:image_url("having-fun.png");
 }
 
+.home-page{
+  background-color: $swiss-coffee;
+  border-radius: 5px;
+  padding-bottom: 25px;
+  width: 340px;
+}
+
+
+.home-form {
+  padding-bottom: 25px !important;
+}
+
+.home-text {
+  color: black;
+  padding-bottom: 60px;
+  text-align: center;
+  margin-top: -245px;
+  padding-top: 25px;
+}
+
+.home-button {
+  background-color: $coral-red;
+  border: none;
+  color: white;
+  padding: 8px 8px;
+  margin: 12px 0px 0px 0px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+
+}
+
+.home-button:hover {
+  background-color: $button-hover;
+  text-decoration: none;
+}

@@ -1,14 +1,14 @@
-<%# <%= render 'shared/banner' %>
+<%= render 'shared/banner' %>
 
-<div class = "banner-home">
-  <div class="container">
+<!-- <div class = "banner-home"> -->
     <div class = "home-text">
-      <h1 style = "margin-bottom: 8px;">TurnUp</h1>
+      <h1>TurnUp</h1>
       <h3>Let us spoil you with options</h3>
     </div>
-    <div class="form-row justify-content-center pt-4">
-      <div div class="col-8">
-        <div class = "card-home">
+  <div class="container home-page">
+    <div class="form-row justify-content-center pt-4 ">
+      <div div class="col-10">
+        <!-- <div class = "card-home"> -->
           <%= form_tag pages_path, method: :get do %>
             <%= text_field_tag :query,
               params[:query],
@@ -17,10 +17,10 @@
             %>
             <%= submit_tag "Start the fun!", class: "home-button" %>
           <% end %>
-        </div>
+        <!-- </div> -->
       </div>
     </div>
   </div>
-</div>
+<!-- </div> -->
 
 
