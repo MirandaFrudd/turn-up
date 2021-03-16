@@ -1,3 +1,11 @@
+.fav-banner {
+  // background-size: cover;
+  // background-position: center;
+  padding: 4px 4;
+  text-color:$white;
+  background-color:$beige-violet;
+}
+
 .item {
   height: 80px;
   display: flex;
@@ -12,7 +20,7 @@
 
 
 .fave-card {
-  width: 310px;
+  width: 300px;
   background: $swiss-coffee;
   padding: 20px 15px 20px 15px;
   border-radius: 5px;
