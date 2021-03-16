@@ -64,6 +64,14 @@ file = URI.open('app/assets/images/Tide-Lines-Scala.jpg')
 activity1.photo.attach(io: file, filename: 'Tide-Lines-Scala.jpg', content_type: 'image/jpg')
 activity1.save!
 
+review = Review.new(title: "Great voices", description: "Best of Scottish music!", rating: 5)
+review.activity = activity1
+review.save
+
+review = Review.new(title: "Good night out", description: "Music was not too bad", rating: 3)
+review.activity = activity1
+review.save
+
 # puts "there are #{Activity.count} activities"
 
 activity2 = Activity.new(
@@ -82,6 +90,14 @@ file = URI.open('app/assets/images/ben-fogle.jpg')
 activity2.photo.attach(io: file, filename: 'ben-fogel.jpg', content_type: 'image/jpg')
 activity2.save!
 
+review = Review.new(title: "I love Ben", description: "Great adventure tales", rating: 5)
+review.activity = activity2
+review.save
+
+review = Review.new(title: "Great stories", description: "Will definitely go camping", rating: 4)
+review.activity = activity2
+review.save
+
 activity3 = Activity.new(
   name: "Teamsport Go Karting",
   description: "Take on the Ultimate Indoor Go Karting London Docklands venue with a huge 800m multilevel track.",
@@ -97,6 +113,14 @@ puts activity3.valid?
 file = URI.open('app/assets/images/go-karting.jpg')
 activity3.photo.attach(io: file, filename: 'go-karting.jpg', content_type: 'image/jpg')
 activity3.save!
+
+review = Review.new(title: "Great karting", description: "A fantastic day of karting", rating: 5)
+review.activity = activity3
+review.save
+
+review = Review.new(title: "Fun day out", description: "Loved it.  Will come again!", rating: 4)
+review.activity = activity3
+review.save
 
 activity4 = Activity.new(
   name: "Flight Club",
@@ -114,6 +138,14 @@ file = URI.open('app/assets/images/flight-club.jpg')
 activity4.photo.attach(io: file, filename: 'flight-club.jpg', content_type: 'image/jpg')
 activity4.save!
 
+review = Review.new(title: "Great darts", description: "Great darts, great fun!", rating: 5)
+review.activity = activity4
+review.save
+
+review = Review.new(title: "Good night", description: "I want to learn darts!", rating: 3)
+review.activity = activity4
+review.save
+
 activity5 = Activity.new(
   name: "Swingers City",
   description: "Comprising two 9-hole crazy golf courses with three incredible street food vendors, five cocktail drenched bars and a two-storey clubhouse, Swingers - City is the ultimate destination for a spot of competitive socialising.",
@@ -129,6 +161,14 @@ puts activity5.valid?
 file = URI.open('app/assets/images/swingers-club.jpg')
 activity5.photo.attach(io: file, filename: 'swingers-club.jpg', content_type: 'image/jpg')
 activity5.save!
+
+review = Review.new(title: "Great fun", description: "Loved the crazy golf!", rating: 5)
+review.activity = activity5
+review.save
+
+review = Review.new(title: "Good food", description: "You won't be disappointed", rating: 3)
+review.activity = activity5
+review.save
 
 activity6 = Activity.new(
   name: "DNA VR Battersea Power Station",
@@ -146,6 +186,14 @@ file = URI.open('app/assets/images/DNA-VR.jpg')
 activity6.photo.attach(io: file, filename: 'DNA-VR.jpg', content_type: 'image/jpg')
 activity6.save!
 
+review = Review.new(title: "VR for me", description: "It was surreal!", rating: 4)
+review.activity = activity6
+review.save
+
+review = Review.new(title: "VR is good", description: "I will come again", rating: 3)
+review.activity = activity6
+review.save
+
 activity7 = Activity.new(
   name: "QUEENS Skate Dine Bowl",
   description: "QUEENS, the iconic ice rink and bowling alley is located on Queensway in the heart of London. With food and drink by MEATliquor, QUEENS is Central London's biggest 'one stop fun shop’.",
@@ -161,6 +209,14 @@ puts activity7.valid?
 file = URI.open('app/assets/images/Queens-skate-dine-bowl.jpg')
 activity7.photo.attach(io: file, filename: 'Queens-skate-dine-bowl.jpg', content_type: 'image/jpg')
 activity7.save!
+
+review = Review.new(title: "King of skating", description: "Never had so much fun on ice. Great crowd!", rating: 5)
+review.activity = activity7
+review.save
+
+review = Review.new(title: "Dancing on ice", description: "Thank you for teaching me to skate", rating: 4)
+review.activity = activity7
+review.save
 
 activity8 = Activity.new(
   name: "Japanese Whisky Masterclass",
@@ -178,6 +234,14 @@ file = URI.open('app/assets/images/japanese-whisky.jpg')
 activity8.photo.attach(io: file, filename: 'japanese-whisky.jpg', content_type: 'image/jpg')
 activity8.save!
 
+review = Review.new(title: "Japan's top secret!", description: "On a par with the best Scottish whiskey!", rating: 5)
+review.activity = activity8
+review.save
+
+review = Review.new(title: "Loved the whiskey", description: "A delightful Japanese surprise!", rating: 4)
+review.activity = activity8
+review.save
+
 activity9 = Activity.new(
   name: "Yayoi Kusama: Infinity Mirror Rooms",
   description: "Tate presents a rare chance to experience two of Yayoi Kusama’s Infinity Mirror Rooms. These immersive installations will transport you into Kusama’s unique vision of endless reflections.",
@@ -193,6 +257,14 @@ puts activity9.valid?
 file = URI.open('app/assets/images/Yayoi-Kusama.jpg')
 activity9.photo.attach(io: file, filename: 'Yayoi-Kusama.jpg', content_type: 'image/jpg')
 activity9.save!
+
+review = Review.new(title: "Great scary fun!", description: "Loved the endless reflections!", rating: 4)
+review.activity = activity9
+review.save
+
+review = Review.new(title: "Mirror on the wall!", description: "My family loved it!", rating: 4)
+review.activity = activity9
+review.save
 
 # activity10 = Activity.new(
 #   name: "Gin House Burlesque",
@@ -325,6 +397,14 @@ file = URI.open('app/assets/images/bletchey.jpg')
 bar1.photo.attach(io: file, filename: 'bletchey.jpg', content_type: 'image/jpg')
 bar1.save!
 
+review = Review.new(title: "Break the code!", description: "Loved the throwback to WWII code breakers!", rating: 4)
+review.bar = bar1
+review.save
+
+review = Review.new(title: "Good night out", description: "Loved the beer, music not so good", rating: 3)
+review.bar = bar1
+review.save
+
 bar2 = Bar.new(
   name: "Callooh Callay, Chelsea",
   description: "It’s the West London counterpart to the multi-award-winning Callooh Callay in Shoreditch. Housed in a former night-club, and still utilising some of the old features, the decor’s a little off-kilter. Drinks-wise, however, nothing’s changed. On offer is a mix of Calooh Callay classics, as well as some newer creations, shaken up by a bar team from the likes of Sketch and 69 Colebrook Row.",
@@ -340,6 +420,14 @@ puts bar2.valid?
 file = URI.open('app/assets/images/callooh-callay-chelsea.jpg')
 bar2.photo.attach(io: file, filename: 'callooh-callay-chelsea.jpg', content_type: 'image/jpg')
 bar2.save!
+
+review = Review.new(title: "Love Callooh", description: "Loved the ambience, and the great cocktails", rating: 5)
+review.bar = bar2
+review.save
+
+review = Review.new(title: "Good bar", description: "Good home brewed beer, but food not quite up to par", rating: 3)
+review.bar = bar2
+review.save
 
 bar3 = Bar.new(
   name: "The Prince",
@@ -357,6 +445,14 @@ file = URI.open('app/assets/images/the-prince.jpg')
 bar3.photo.attach(io: file, filename: 'the-prince.jpg', content_type: 'image/jpg')
 bar3.save!
 
+review = Review.new(title: "Prince of bars", description: "Great beer, great food, great people!", rating: 5)
+review.bar = bar3
+review.save
+
+review = Review.new(title: "Many choices", description: "Spoilt for choice - 3 bars, 4 restaurants, lovely garden", rating: 5)
+review.bar = bar3
+review.save
+
 bar4 = Bar.new(
   name: "Bunga Bunga",
   description: "It’s a totally over-the-top, fun-loving Italian pizzeria and cocktail bar, where – alongside freshly-made, metre-long pizzas, and sparkler-filled sharing cocktails – you’ll find late-night karaoke, five days a week",
@@ -372,6 +468,14 @@ puts bar4.valid?
 file = URI.open('app/assets/images/bunga-bunga.jpg')
 bar4.photo.attach(io: file, filename: 'bunga-bunga.jpg', content_type: 'image/jpg')
 bar4.save!
+
+review = Review.new(title: "Bung of a bar!", description: "Great Italian beer and lovely freshly made pizza!", rating: 4)
+review.bar = bar4
+review.save
+
+review = Review.new(title: "Over the top", description: "Great cocktails, but a bit over the top on the food", rating: 3)
+review.bar = bar4
+review.save
 
 
 bar5 = Bar.new(
@@ -390,6 +494,14 @@ file = URI.open('app/assets/images/the-distillery.jpg')
 bar5.photo.attach(io: file, filename: 'the-distillery.jpg', content_type: 'image/jpg')
 bar5.save!
 
+review = Review.new(title: "Great distillery", description: "Loved the freshly distilled gin.  I am never going back to beer!", rating: 5)
+review.bar = bar5
+review.save
+
+review = Review.new(title: "Good gin", description: "First time on gin.  Need some time to get used to it", rating: 3)
+review.bar = bar5
+review.save
+
 bar6 = Bar.new(
   name: "Barts",
   description: "Hidden away behind an inconspicuous black door in Chelsea is this eccentric, 1930’s-inspired drinking den. Get the password right and you’ll be ushered inside where – dressed up in a little fancy dress – you can work your way through their 40+ cocktail list, including sharing cocktails served up in full china tea-sets",
@@ -405,6 +517,14 @@ puts bar6.valid?
 file = URI.open('app/assets/images/barts.jpg')
 bar6.photo.attach(io: file, filename: 'barts.jpg', content_type: 'image/jpg')
 bar6.save!
+
+review = Review.new(title: "Hidden gem", description: "Loved the 1930's theme.  Will come again!", rating: 4)
+review.bar = bar6
+review.save
+
+review = Review.new(title: "OK night", description: "Beer was ok", rating: 3)
+review.bar = bar6
+review.save
 
 bar7 = Bar.new(
   name: "Trailer Happiness",
@@ -422,6 +542,14 @@ file = URI.open('app/assets/images/trailer-happiness.jpg')
 bar7.photo.attach(io: file, filename: 'trailer-happiness.jpg', content_type: 'image/jpg')
 bar7.save!
 
+review = Review.new(title: "Taste of Jamaica", description: "Loved the Jamaican patties.  Beer was good too", rating: 4)
+review.bar = bar7
+review.save
+
+review = Review.new(title: "Good night out", description: "Service was good.  Will come again", rating: 3)
+review.bar = bar7
+review.save
+
 bar8 = Bar.new(
   name: "Coupette",
   description: "Easily one of our favourite bars in London, Coupette is an unpretentious, cosy cocktail den where the drinks all hover around the £10 mark, and yet do mystical things with maple vermouth, sunflower seeds, burnt treacle and smoke",
@@ -437,6 +565,14 @@ puts bar8.valid?
 file = URI.open('app/assets/images/coupette.jpg')
 bar8.photo.attach(io: file, filename: 'coupette.jpg', content_type: 'image/jpg')
 bar8.save!
+
+review = Review.new(title: "Unpretentious", description: "Lovely cocktails - a bit pricey!", rating: 3)
+review.bar = bar8
+review.save
+
+review = Review.new(title: "Great night", description: "Loved the cocktails - and the staff were very attentive!", rating: 4)
+review.bar = bar8
+review.save
 
 bar9 = Bar.new(
   name: "Barge East",
@@ -454,6 +590,14 @@ file = URI.open('app/assets/images/barge-east.jpg')
 bar9.photo.attach(io: file, filename: 'barge-east.jpg', content_type: 'image/jpg')
 bar9.save!
 
+review = Review.new(title: "Beer on the waves", description: "New experience drinking on the waves - found my sea legs quickly", rating: 4)
+review.bar = bar9
+review.save
+
+review = Review.new(title: "Different type of bar", description: "Loved the novelty of drinking on a boat - shame beer was below par", rating: 3)
+review.bar = bar9
+review.save
+
 bar10 = Bar.new(
   name: "Discount Suit Company",
   description: "A textbook date spot tucked away in a tailor’s old stock room, with Motown records and cocktails mixed by barkeeps fully fluent in the language of good drinks",
@@ -469,6 +613,14 @@ puts bar10.valid?
 file = URI.open('app/assets/images/discount-suit-company.jpg')
 bar10.photo.attach(io: file, filename: 'discount-suit-company.jpg', content_type: 'image/jpg')
 bar10.save!
+
+review = Review.new(title: "Suits me", description: "Smart bar, and mightly fine ale!", rating: 5)
+review.bar = bar10
+review.save
+
+review = Review.new(title: "Overated", description: "Well laid out bar, but long wait to be served", rating: 3)
+review.bar = bar10
+review.save
 
 # END BARS
 
@@ -490,6 +642,14 @@ file = URI.open('app/assets/images/koya.jpeg')
 restaurant1.photo.attach(io: file, filename: 'koya.jpg', content_type: 'image/jpg')
 restaurant1.save!
 
+review = Review.new(title: "Best Japanese food", description: "I can't get enough of the noodles!", rating: 5)
+review.restaurant = restaurant1
+review.save
+
+review = Review.new(title: "Lovely ambience", description: "Loved the communal feel to this place!", rating: 4)
+review.restaurant = restaurant1
+review.save
+
 restaurant2 = Restaurant.new(
   name: "Morito",
   description: "Spartan tapas bar which shares the buzz and the Spanish–North African flavours of next-door Moro.",
@@ -505,6 +665,14 @@ puts restaurant2.valid?
 file = URI.open('app/assets/images/morito.jpg')
 restaurant2.photo.attach(io: file, filename: 'morito.jpg', content_type: 'image/jpg')
 restaurant2.save!
+
+review = Review.new(title: "Spartan delight!", description: "Decor is plain, but the food packs a punch!", rating: 5)
+review.restaurant = restaurant2
+review.save
+
+review = Review.new(title: "Taste of Spain", description: "Good Spanish beer, accompanied by good tapas", rating: 3)
+review.restaurant = restaurant2
+review.save
 
 restaurant3 = Restaurant.new(
   name: "Clipstone",
@@ -522,6 +690,14 @@ file = URI.open('app/assets/images/clipstone.jpg')
 restaurant3.photo.attach(io: file, filename: 'clipstone.jpg', content_type: 'image/jpg')
 restaurant3.save!
 
+review = Review.new(title: "Undiscovered British food!", description: "Lovely hidden British gems - great dining experience!", rating: 5)
+review.restaurant = restaurant3
+review.save
+
+review = Review.new(title: "Solid food", description: "Not great, but not bad either!", rating: 3)
+review.restaurant = restaurant3
+review.save
+
 restaurant4 = Restaurant.new(
   name: "Din Tai Fung",
   description: "Welcome to Din Tai Fung, a world-renowned Chinese restaurant originating in Taiwan that specializes in soup dumplings and noodles.",
@@ -537,6 +713,14 @@ puts restaurant4.valid?
 file = URI.open('app/assets/images/dintaifung.jpg')
 restaurant4.photo.attach(io: file, filename: 'dintaifung.jpg', content_type: 'image/jpg')
 restaurant4.save!
+
+review = Review.new(title: "Delicious Taiwanese fare", description: "Never had a bad meal here - recommend the dumplings!", rating: 5)
+review.restaurant = restaurant4
+review.save
+
+review = Review.new(title: "Don't miss out", description: "New meaning to Chinese cuisine!", rating: 4)
+review.restaurant = restaurant4
+review.save
 
 restaurant5 = Restaurant.new(
   name: "Kitty Fisher's Mayfair",
@@ -554,6 +738,14 @@ file = URI.open('app/assets/images/kitty-fishers.jpg')
 restaurant5.photo.attach(io: file, filename: 'kitty-fishers.jpg', content_type: 'image/jpg')
 restaurant5.save!
 
+review = Review.new(title: "Great fusion!", description: "Loved the fusion of British and Spanish cuisine!", rating: 4)
+review.restaurant = restaurant5
+review.save
+
+review = Review.new(title: "Confusion!", description: "Good food, but too much experimenting!", rating: 3)
+review.restaurant = restaurant5
+review.save
+
 restaurant6 = Restaurant.new(
   name: "Som Saa Thai Restaurant",
   description: "Buzzy bar/restaurant in former fabric warehouse, serving old-style Thai cuisine & intriguing drinks.",
@@ -569,6 +761,14 @@ puts restaurant6.valid?
 file = URI.open('app/assets/images/somsaa.jpeg')
 restaurant6.photo.attach(io: file, filename: 'somsaa.jpg', content_type: 'image/jpg')
 restaurant6.save!
+
+review = Review.new(title: "Thai delight!", description: "Lovely, lovely, lovely food!", rating: 5)
+review.restaurant = restaurant6
+review.save
+
+review = Review.new(title: "Great food", description: "Good solid Thai food!", rating: 4)
+review.restaurant = restaurant6
+review.save
 
 restaurant7 = Restaurant.new(
   name: "SMOKESTAK | london barbecue",
@@ -586,6 +786,14 @@ file = URI.open('app/assets/images/smokestak.jpg')
 restaurant7.photo.attach(io: file, filename: 'smokestak.jpg', content_type: 'image/jpg')
 restaurant7.save!
 
+review = Review.new(title: "Great BBQ!", description: "Great summer food!", rating: 4)
+review.restaurant = restaurant7
+review.save
+
+review = Review.new(title: "Lovely grilled food", description: "Highly recommend the smoked haddock!", rating: 4)
+review.restaurant = restaurant7
+review.save
+
 restaurant8 = Restaurant.new(
   name: "Black Bear Burger Restaurant Shoreditch",
   description: "Casual, rustic spot for sustainable burgers made with aged grass-fed beef plus beer & patio seating.",
@@ -601,6 +809,14 @@ puts restaurant8.valid?
 file = URI.open('app/assets/images/blackbearburger.jpg')
 restaurant8.photo.attach(io: file, filename: 'blackbearburger.jpg', content_type: 'image/jpg')
 restaurant8.save!
+
+review = Review.new(title: "Burger king", description: "The true burger king!", rating: 5)
+review.restaurant = restaurant8
+review.save
+
+review = Review.new(title: "Fresh burgers", description: "Not good for my waistline, but I can't stop coming back!", rating: 5)
+review.restaurant = restaurant8
+review.save
 
 restaurant9 = Restaurant.new(
   name: "St John, Smithfield",
@@ -618,6 +834,14 @@ file = URI.open('app/assets/images/st-john.jpg')
 restaurant9.photo.attach(io: file, filename: 'st-john.jpg', content_type: 'image/jpg')
 restaurant9.save!
 
+review = Review.new(title: "Like old times", description: "Throw back to the 19th century, but food is 21st century!", rating: 4)
+review.restaurant = restaurant9
+review.save
+
+review = Review.new(title: "Loved it", description: "Good solid cooking!", rating: 3)
+review.restaurant = restaurant9
+review.save
+
 restaurant10 = Restaurant.new(
   name: "The Clove Club",
   description: "According to the critics, there are only 26 places on planet earth where you can enjoy a better meal than at The Clove Club.  According to everyone who has eyes, the restaurant itself – set in the 150 year old Shoreditch Town Hall – is pretty damn beautiful.",
@@ -633,6 +857,14 @@ puts restaurant10.valid?
 file = URI.open('app/assets/images/clove-club.jpg')
 restaurant10.photo.attach(io: file, filename: 'clove-club.jpg', content_type: 'image/jpg')
 restaurant10.save!
+
+review = Review.new(title: "Top notch!", description: "Deserves 3 Michelin stars!", rating: 5)
+review.restaurant = restaurant10
+review.save
+
+review = Review.new(title: "Great food", description: "Best food in East London!", rating: 4)
+review.restaurant = restaurant10
+review.save
 
 
 puts "there are #{Restaurant.count} restaurants"
