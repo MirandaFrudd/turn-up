@@ -26,12 +26,18 @@ const addLocks = () => {
   console.log("triggred")
   document.getElementById("lock-rest").addEventListener("click", (event) => {
     event.currentTarget.classList.toggle("locked")
+    document.getElementById("to-lock-rest").classList.toggle("d-none")
+    document.getElementById("to-unlock-rest").classList.toggle("d-none")
   })
   document.getElementById("lock-bar").addEventListener("click", (event) => {
     event.currentTarget.classList.toggle("locked")
+    document.getElementById("to-lock-bar").classList.toggle("d-none")
+    document.getElementById("to-unlock-bar").classList.toggle("d-none")
   })
   document.getElementById("lock-activity").addEventListener("click", (event) => {
     event.currentTarget.classList.toggle("locked")
+    document.getElementById("to-lock-activity").classList.toggle("d-none")
+    document.getElementById("to-unlock-activity").classList.toggle("d-none")
   })
 }
 
