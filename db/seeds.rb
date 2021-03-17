@@ -795,7 +795,7 @@ review.restaurant = restaurant7
 review.save
 
 restaurant8 = Restaurant.new(
-  name: "Black Bear Burger Restaurant Shoreditch",
+  name: "Black Bear Burger",
   description: "Casual, rustic spot for sustainable burgers made with aged grass-fed beef plus beer & patio seating.",
   address: "Boxpark 10, Bethnal Green Rd",
   town: "London",

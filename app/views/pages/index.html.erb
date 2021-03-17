@@ -14,8 +14,8 @@
       <%# <button type="submit" class="btn-star">
         <i class="fas fa-star"></i>
       </button> %>
-      <button type="submit" class="btn-star">
-        <span class="material-icons md-64 md-red">star_rate</span>
+      <button type="submit" class="btn-star" >
+        <span class="material-icons md-64 md-red" title="favourite me!">star_rate</span>
       </button>
       <%# <input class="btn-star" type="submit" value=""> %>
       <% end %>
@@ -28,21 +28,21 @@
             <div class="card-element-top">
               <div>
                 <h3><strong><%= @restaurant.name %></strong></h3>
-                <p><%= @restaurant.address.truncate(50) %></p>
+                <p><strong><%= @restaurant.address.truncate(40) %></strong></p>
               </div>
               <div class="restaurant-icon">
-                <span class="material-icons md-36 md-red center">restaurant</span>
+                <span class="material-icons md-36 md-swiss-coffee center">restaurant</span>
               </div>
             </div>
-            <p><%= @restaurant.description.truncate(65) %></p>
+            <p class="desc-margin"><%= @restaurant.description.truncate(65) %></p>
           </div>
           <div class="main-card-icons">
-            <div class="budget">
+            <div class="budget icon-margin">
               <% @restaurant.budget.times { |i| puts %> <i class="fas fa-pound-sign"></i> <% } %>
             </div>
-            <% if @restaurant.day && @restaurant.night %> <i class="fas fa-sun"></i> <i class="fas fa-moon"></i>
-            <% elsif @restaurant.night %> <i class="fas fa-sun" style="color:#f8f9fa"></i> <i class="fas fa-moon"></i>
-            <% else @restaurant.day %> <i class="fas fa-sun"></i> <i class="fas fa-moon" style="color:#f8f9fa"></i>
+            <% if @restaurant.day && @restaurant.night %> <span class="material-icons md-15 icon-margin">brightness_4</span>
+            <% elsif @restaurant.night %> <span class="material-icons md-15 icon-margin">brightness_2</span>
+            <% else @restaurant.day %> <span class="material-icons md-15 icon-margin">brightness_5</span>
             <% end %>
           </div>
     <!--    <div>
@@ -52,8 +52,8 @@
       </div>
     </div>
     <div id="lock-rest">
-      <span id="to-unlock-rest" class="material-icons">lock_open</span>
-      <span id="to-lock-rest" class="material-icons d-none">lock</span>
+      <span id="to-unlock-rest" class="material-icons md-red md-24">lock_open</span>
+      <span id="to-lock-rest" class="material-icons d-none md-red md-24">lock</span>
     </div>
     <div class="bar" id="shuffle-bar">
       <div class = "card-element">
@@ -63,21 +63,21 @@
             <div class="card-element-top">
               <div>
                 <h3><strong><%= @bar.name %></strong></h3>
-                <p><%= @bar.address.truncate(50) %></p>
+                <p><strong><%= @bar.address.truncate(40) %></strong></p>
               </div>
               <div class="bar-icon">
-                <span class="material-icons md-36 md-red">local_bar</span>
+                <span class="material-icons md-36 md-swiss-coffee">local_bar</span>
               </div>
             </div>
-            <p><%= @bar.description.truncate(65) %></p>
+            <p class="desc-margin"><%= @bar.description.truncate(50) %></p>
           </div>
           <div class="main-card-icons">
-            <div class="budget">
+            <div class="budget icon-margin">
               <% @bar.budget.times { |i| puts %> <i class="fas fa-pound-sign"></i> <% } %>
             </div>
-            <% if @bar.day && @bar.night %> <i class="fas fa-sun"></i> <i class="fas fa-moon"></i>
-              <% elsif @bar.night %> <i class="fas fa-sun" style="color:#f8f9fa"></i> <i class="fas fa-moon"></i>
-              <% else @bar.day %> <i class="fas fa-sun"></i> <i class="fas fa-moon" style="color:#f8f9fa"></i>
+            <% if @bar.day && @bar.night %> <span class="material-icons md-15 icon-margin">brightness_4</span>
+              <% elsif @bar.night %> <span class="material-icons md-15 icon-margin">brightness_2</span>
+              <% else @bar.day %> <span class="material-icons md-15 icon-margin">brightness_5</span>
             <% end %>
           </div>
     <!--    <div>
@@ -87,8 +87,8 @@
       </div>
     </div>
     <div id="lock-bar">
-      <span id="to-unlock-bar" class="material-icons">lock_open</span>
-      <span id="to-lock-bar" class="material-icons d-none">lock</span>
+      <span id="to-unlock-bar" class="material-icons md-red md-24">lock_open</span>
+      <span id="to-lock-bar" class="material-icons d-none md-red md-24">lock</span>
     </div>
     <div class="activity" id="shuffle-activity">
       <div class = "card-element">
@@ -98,21 +98,21 @@
             <div class="card-element-top">
               <div>
                 <h3><strong><%= @activity.name %></strong></h3>
-                <p><%= @activity.address.truncate(50) %></p>
+                <p><strong><%= @activity.address.truncate(40) %></strong></p>
               </div>
               <div class="activity-icon">
-                <span class="material-icons md-36 md-red">attractions</span>
+                <span class="material-icons md-36 md-swiss-coffee">attractions</span>
               </div>
             </div>
-            <p><%= @activity.description.truncate(50) %></p>
+            <p class="desc-margin"><%= @activity.description.truncate(50) %></p>
           </div>
           <div class="main-card-icons">
-            <div class="budget">
+            <div class="budget icon-margin">
               <% @activity.budget.times { |i| puts %> <i class="fas fa-pound-sign"></i> <% } %>
             </div>
-            <% if @activity.day && @activity.night %> <i class="fas fa-sun"></i> <i class="fas fa-moon"></i>
-              <% elsif @activity.night %> <i class="fas fa-sun" style="color:#f8f9fa"></i> <i class="fas fa-moon"></i>
-              <% else @activity.day %> <i class="fas fa-sun"></i> <i class="fas fa-moon" style="color:#f8f9fa"></i>
+            <% if @activity.day && @activity.night %> <span class="material-icons md-15 icon-margin">brightness_4</span>
+              <% elsif @activity.night %> <span class="material-icons md-15 icon-margin">brightness_2</span>
+              <% else @activity.day %> <span class="material-icons md-15 icon-margin">brightness_5</span>
             <% end %>
           </div>
     <!--    <div>
@@ -122,11 +122,11 @@
       </div>
     </div>
     <div id="lock-activity">
-      <span id="to-unlock-activity" class="material-icons">lock_open</span>
-      <span id="to-lock-activity" class="material-icons d-none">lock</span>
+      <span id="to-unlock-activity" class="material-icons md-red md-24">lock_open</span>
+      <span id="to-lock-activity" class="material-icons d-none md-red md-24">lock</span>
     </div>
     <div class="d-flex justify-content-center">
-      <button type="button" id="shuffle" class="btn-red">Shuffle</button>
+      <button type="button" id="shuffle" class="btn-red shuffle-button"><i class="fas fa-dice"></i>  Shuffle</button>
     </div>
   </div>
 </div>
