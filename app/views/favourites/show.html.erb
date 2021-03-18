@@ -18,17 +18,6 @@
               <span class="material-icons md-24 md-red center">restaurant</span>
             </div>
 
-
-              <div class="main-card-icons">
-                <div class="budget">
-                  <% @favourite.restaurant.budget.times { |i| puts %> <i class="fas fa-pound-sign"></i> <% } %>
-                </div>
-                <% if @favourite.restaurant.day && @favourite.restaurant.night %> <i class="fas fa-sun"></i> <i class="fas fa-moon"></i>
-                  <% elsif @favourite.restaurant.night %> <i class="fas fa-sun" style="color:#f8f9fa"></i> <i class="fas fa-moon"></i>
-                  <% else @favourite.restaurant.day %> <i class="fas fa-sun"></i> <i class="fas fa-moon" style="color:#f8f9fa"></i>
-                <% end %>
-              </div>
-
           </div>
         </div>
 
@@ -42,16 +31,6 @@
 
               <div class="fave-bar-icon">
                 <span class="material-icons md-24 md-red">local_bar</span>
-              </div>
-
-              <div class="main-card-icons">
-                <div class="budget">
-                  <% @favourite.bar.budget.times { |i| puts %> <i class="fas fa-pound-sign"></i> <% } %>
-                </div>
-                <% if @favourite.bar.day && @favourite.bar.night %> <i class="fas fa-sun"></i> <i class="fas fa-moon"></i>
-                  <% elsif @favourite.bar.night %> <i class="fas fa-sun" style="color:#f8f9fa"></i> <i class="fas fa-moon"></i>
-                  <% else @favourite.bar.day %> <i class="fas fa-sun"></i> <i class="fas fa-moon" style="color:#f8f9fa"></i>
-                <% end %>
               </div>
 
           </div>
@@ -68,16 +47,6 @@
 
               <div class="fave-activity-icon">
                 <span class="material-icons md-24 md-red">attractions</span>
-              </div>
-
-                <div class="main-card-icons">
-                <div class="budget">
-                  <% @favourite.activity.budget.times { |i| puts %> <i class="fas fa-pound-sign"></i> <% } %>
-                </div>
-                <% if @favourite.activity.day && @favourite.activity.night %> <i class="fas fa-sun"></i> <i class="fas fa-moon"></i>
-                  <% elsif @favourite.activity.night %> <i class="fas fa-sun" style="color:#f8f9fa"></i> <i class="fas fa-moon"></i>
-                  <% else @favourite.activity.day %> <i class="fas fa-sun"></i> <i class="fas fa-moon" style="color:#f8f9fa"></i>
-                <% end %>
               </div>
 
           </div>
