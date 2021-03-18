@@ -1,0 +1,58 @@
+.show-card {
+  // width: 420px;
+  // height: 630px;
+  background: $swiss-coffee;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  padding: 16px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.show-img {
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 12px;
+}
+
+.show-address {
+  font-size: 14px;
+}
+
+.show-desc {
+  font-size: 14px;
+}
+
+.show-link {
+  color: $coral-red;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+
+  &:hover {
+  text-decoration: none;
+  color: red;
+  }
+}
+
+.show-icons {
+  color: #464646;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.show-icon-margin {
+  margin: 0px 12px 6px 0px;
+}
+
+.review-element {
+  background: rgb(247, 243, 239);
+  margin: 12px 0px;
+  padding: 8px;
+  border-radius: 2px;
+  font-size:14px;
+}
+
+.review-title {
+  margin: 16px 0px;
+}
