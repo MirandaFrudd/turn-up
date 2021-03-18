@@ -8,6 +8,7 @@
   border-radius: 10px;
   margin: 10px;
   position: relative;
+
 }
 
 
@@ -15,14 +16,18 @@
   overflow: hidden;
   height: 142px;
   background: rgb(247, 243, 239);
-  // box-shadow: 0px 0px 15px 0px rgb(136, 136, 136);
+  box-shadow: 0px 0px 10px 0px #bbbbbb;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   margin: 12px;
-  border-radius: 2px;
+  border-radius: 4px;
   text-align: top;
   position: relative;
+}
+
+a {
+  text-decoration: none !important;
 }
 
 .card-element-content {
@@ -35,7 +40,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  text-decoration: none!important;
 }
+
 
 .desc-margin {
   margin-bottom: 4px;
@@ -166,7 +173,7 @@
     // border: solid;
     color: white;
     background-color: $button-hover;
-  text-decoration: none;
+    text-decoration: none;
   }
 }
 
@@ -181,19 +188,35 @@
   display: inline-block;
   font-size: 32px;
   // border-radius: 50%;
+  // animation: shake 5s ease-out;
+  // animation-iteration-count: infinite;
+}
 
+.material-icons.md-red{
+ animation: dula 5s linear infinite;
+}
 
-  &:hover {
-  // background-color: $coral-red;
-  text-decoration: none;
-  color: $button-hover;
+@keyframes dula {
+  from {
+    opacity: 0.7;
+  } 50% {
+    opacity: 0.6;
+  } 70% {
+    opacity: 1;
+  } to {
+    opacity: 0.7;
   }
 }
 
+.material-icons.md-red:hover {
+  color: #ef7381;
+  // animation: shake 0.4s ease-out;
+  // cursor: pointer;
+}
 
 .cover {
   object-fit: cover;
-  width: 140px;
+  width: 130px;
   height: 142px;
 }
 
@@ -255,7 +278,35 @@
 .shuffle-button {
   font-size: 18px;
   color: $white;
+  padding: 8px 12px!important;
+  box-shadow: 0px 0px 10px 0px #bbbbbb;
+
+  &:hover{
+  animation: shake 5s;
+  }
 }
+
+@keyframes shake {
+        2%, 18% {
+            transform: skewX(-10deg);
+        }
+
+        4%, 16% {
+            transform: skewX(10deg);
+        }
+
+        6%, 10%, 14% {
+            transform: skewX(-10deg);
+        }
+
+        8%, 12% {
+            transform: skewX(10deg);
+        }
+
+        18% {
+            transform: skewX(-10deg);
+        }
+    }
 
 
 
