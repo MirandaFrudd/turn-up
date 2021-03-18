@@ -2,6 +2,12 @@ class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show]
 
   def show
+    @marker =
+      [{
+        lat: @activity.latitude,
+        lng: @activity.longitude,
+        # image_url: helpers.asset_url('???.png')
+      }]
   end
 
   private
