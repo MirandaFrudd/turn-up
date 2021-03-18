@@ -181,15 +181,11 @@
   display: inline-block;
   font-size: 32px;
   // border-radius: 50%;
-
-
-  &:hover {
-  // background-color: $coral-red;
-  text-decoration: none;
-  color: $button-hover;
-  }
 }
 
+.material-icons.md-red:hover {
+      color: #ef7381;
+}
 
 .cover {
   object-fit: cover;
@@ -255,7 +251,35 @@
 .shuffle-button {
   font-size: 18px;
   color: $white;
+  padding: 8px 12px!important;
 }
+
+.shuffle-button:hover {
+   animation: shake 0.4s ease-out;
+  cursor: pointer;
+}
+
+@keyframes shake {
+        0% {
+            transform: skewX(-10deg);
+        }
+
+        25% {
+            transform: skewX(10deg);
+        }
+
+        50% {
+            transform: skewX(-10deg);
+        }
+
+        75% {
+            transform: skewX(10deg);
+        }
+
+        100% {
+            transform: skewX(-10deg);
+        }
+    }
 
 
 
