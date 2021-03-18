@@ -43,8 +43,16 @@
     <h1>Reviews</h1>
     <% @restaurant.reviews.each do |review| %>
     <%= render "shared/rating", percent: review.rating_as_percent %> <br>
-    <%# <%= review.rating %> 
+    <%# <%= review.rating %>
     <%= review.title %> <br>
     <%= review.description %> <br>
     <% end %>
+  </div>
+
+  <div class="container">
+    <div id="map"
+       style="width: 100%; height: 400px;"
+       data-markers="<%= @marker.to_json %>"
+       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>

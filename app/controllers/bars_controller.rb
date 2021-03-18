@@ -2,6 +2,12 @@ class BarsController < ApplicationController
   before_action :set_bar, only: [:show]
 
   def show
+    @marker =
+      [{
+        lat: @bar.latitude,
+        lng: @bar.longitude,
+        # image_url: helpers.asset_url('???.png')
+      }]
   end
 
   private

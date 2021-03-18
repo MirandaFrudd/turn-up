@@ -2,6 +2,12 @@ class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: [:show]
 
   def show
+    @marker =
+      [{
+        lat: @restaurant.latitude,
+        lng: @restaurant.longitude,
+        image_url: helpers.asset_url('logo_small_icon_only.png')
+      }]
   end
 
   private
