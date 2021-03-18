@@ -73,7 +73,7 @@ const loadRest = () => {
                 <p> ${data.restaurant.address.substring(0, 50)}... </p>
               </div>
               <div class="restaurant-icon">
-                <span class="material-icons md-36 md-red center">restaurant</span>
+                <span class="material-icons md-36 md-swiss-coffee center">restaurant</span>
               </div>
             </div>
             <p> ${data.restaurant.description.substring(0, 80)}... </p>
@@ -101,7 +101,7 @@ const loadBar = () => {
                     <p> ${data.bar.address.substring(0, 50)}... </p>
                   </div>
                   <div class="bar-icon">
-                    <span class="material-icons md-36 md-red center">local_bar</span>
+                    <span class="material-icons md-36 md-swiss-coffee center">local_bar</span>
                   </div>
                 </div>
                 <p> ${data.bar.description.substring(0, 80)}... </p>
@@ -129,7 +129,7 @@ const loadActivity = () => {
                 <p> ${data.activity.address.substring(0, 50)}... </p>
               </div>
               <div class="activity-icon">
-                <span class="material-icons md-36 md-red center">attractions</span>
+                <span class="material-icons md-36 md-swiss-coffee center">attractions</span>
               </div>
             </div>
             <p> ${data.activity.description.substring(0, 80)}... </p>
