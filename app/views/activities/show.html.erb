@@ -5,6 +5,10 @@
     </p>
     <table>
       <tr>
+        <th>Photo:</th>
+        <td><%= cl_image_tag @activity.photo.key, class: "cover" %></td>
+      </tr>
+      <tr>
         <th>Address:</th>
         <td><%= @activity.address %></td>
       </tr>
@@ -30,20 +34,15 @@
       </tr>
       <tr>
         <th>Website:</th>
-        <td><%= @activity.website %></td>
-      </tr>
-      <tr>
-        <th>Photo:</th>
-        <td><%= @activity.photo %></td>
+        <td><%=link_to "website", @activity.website, target: :blank %></td>
       </tr>
     </table>
-    <%= link_to "Discovery page", pages_path %> <br>
-    <%= link_to "Favourites", favourites_path %>
 
-    <h1>Reviews</h1>
+    <h2><%= @activity.reviews.size %> Reviews
+    <%= render "shared/rating", percent: ((@activity.reviews.average(:rating).to_f / 5.0) * 100) %> 
+    </h2> 
     <% @activity.reviews.each do |review| %>
     <%= render "shared/rating", percent: review.rating_as_percent %> <br>
-    <%# <%= review.rating %>
     <%= review.title %> <br>
     <%= review.description %> <br>
     <% end %>
