@@ -8,6 +8,7 @@
   border-radius: 10px;
   margin: 10px;
   position: relative;
+
 }
 
 
@@ -15,14 +16,18 @@
   overflow: hidden;
   height: 142px;
   background: rgb(247, 243, 239);
-  // box-shadow: 0px 0px 15px 0px rgb(136, 136, 136);
+  box-shadow: 0px 0px 10px 0px #bbbbbb;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   margin: 12px;
-  border-radius: 2px;
+  border-radius: 4px;
   text-align: top;
   position: relative;
+}
+
+a {
+  text-decoration: none !important;
 }
 
 .card-element-content {
@@ -35,7 +40,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  text-decoration: none!important;
 }
+
 
 .desc-margin {
   margin-bottom: 4px;
@@ -166,7 +173,7 @@
     // border: solid;
     color: white;
     background-color: $button-hover;
-  text-decoration: none;
+    text-decoration: none;
   }
 }
 
@@ -181,10 +188,30 @@
   display: inline-block;
   font-size: 32px;
   // border-radius: 50%;
+  // animation: shake 5s ease-out;
+  // animation-iteration-count: infinite;
+}
+
+.material-icons.md-red{
+ animation: dula 5s linear infinite;
+}
+
+@keyframes dula {
+  from {
+    opacity: 0.7;
+  } 50% {
+    opacity: 0.6;
+  } 70% {
+    opacity: 1;
+  } to {
+    opacity: 0.7;
+  }
 }
 
 .material-icons.md-red:hover {
-      color: #ef7381;
+  color: #ef7381;
+  // animation: shake 0.4s ease-out;
+  // cursor: pointer;
 }
 
 .cover {
@@ -252,31 +279,31 @@
   font-size: 18px;
   color: $white;
   padding: 8px 12px!important;
-}
+  box-shadow: 0px 0px 10px 0px #bbbbbb;
 
-.shuffle-button:hover {
-   animation: shake 0.4s ease-out;
-  cursor: pointer;
+  &:hover{
+  animation: shake 5s;
+  }
 }
 
 @keyframes shake {
-        0% {
+        2%, 18% {
             transform: skewX(-10deg);
         }
 
-        25% {
+        4%, 16% {
             transform: skewX(10deg);
         }
 
-        50% {
+        6%, 10%, 14% {
             transform: skewX(-10deg);
         }
 
-        75% {
+        8%, 12% {
             transform: skewX(10deg);
         }
 
-        100% {
+        18% {
             transform: skewX(-10deg);
         }
     }

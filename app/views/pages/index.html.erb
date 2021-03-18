@@ -20,6 +20,8 @@
       <%# <input class="btn-star" type="submit" value=""> %>
       <% end %>
     </div>
+
+    <%= link_to restaurant_path(@restaurant) do %>
     <div class="restaurant" id="shuffle-rest">
       <div class="card-element">
         <%= cl_image_tag @restaurant.photo.key, class:"cover" %>
@@ -51,10 +53,15 @@
   -->  </div>
       </div>
     </div>
+<% end %>
+
+
     <div id="lock-rest">
       <span id="to-unlock-rest" class="material-icons md-red md-24">lock_open</span>
       <span id="to-lock-rest" class="material-icons d-none md-red md-24">lock</span>
     </div>
+
+    <%= link_to bar_path(@bar) do %>
     <div class="bar" id="shuffle-bar">
       <div class = "card-element">
         <%= cl_image_tag @bar.photo.key, class:"cover" %>
@@ -86,10 +93,15 @@
         </div>
       </div>
     </div>
+  <% end %>
+
+
     <div id="lock-bar">
       <span id="to-unlock-bar" class="material-icons md-red md-24">lock_open</span>
       <span id="to-lock-bar" class="material-icons d-none md-red md-24">lock</span>
     </div>
+
+  <%= link_to activity_path(@activity) do %>
     <div class="activity" id="shuffle-activity">
       <div class = "card-element">
         <%= cl_image_tag @activity.photo.key, class:"cover" %>
@@ -121,6 +133,9 @@
         </div>
       </div>
     </div>
+  <% end %>
+
+
     <div id="lock-activity">
       <span id="to-unlock-activity" class="material-icons md-red md-24">lock_open</span>
       <span id="to-lock-activity" class="material-icons d-none md-red md-24">lock</span>
