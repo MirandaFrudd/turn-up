@@ -614,7 +614,7 @@ file = URI.open('app/assets/images/discount-suit-company.jpg')
 bar10.photo.attach(io: file, filename: 'discount-suit-company.jpg', content_type: 'image/jpg')
 bar10.save!
 
-review = Review.new(title: "Suits me", description: "Smart bar, and mightly fine ale!", rating: 5)
+review = Review.new(title: "Suits me", description: "Smart bar, and mighty fine ale!", rating: 5)
 review.bar = bar10
 review.save
 
