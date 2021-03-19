@@ -747,7 +747,7 @@ review.restaurant = restaurant5
 review.save
 
 restaurant6 = Restaurant.new(
-  name: "Som Saa Thai Restaurant",
+  name: "Som Saa Thai",
   description: "Buzzy bar/restaurant in former fabric warehouse, serving old-style Thai cuisine & intriguing drinks.",
   address: "143A Commercial St, Shoreditch",
   town: "London",
