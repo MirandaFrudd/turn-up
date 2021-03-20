@@ -26,7 +26,7 @@
     </div> -->
     </div>
 
-    <%= link_to restaurant_path(@restaurant), class:'restaurant-link' do %>
+ <%#= link_to restaurant_path(@restaurant), class:'restaurant-link' do %>
     <div class="restaurant" id="shuffle-rest" data-modal-target="#restaurantmodal">
       <div class="card-element">
         <%= cl_image_tag @restaurant.photo.key, class:"cover" %>
@@ -58,7 +58,7 @@
   -->  </div>
       </div>
     </div>
-<% end %>
+<%# end %>
 
     <div id="lock-rest">
       <span id="to-unlock-rest" class="material-icons md-red md-24">lock_open</span>
@@ -149,7 +149,7 @@
   </div>
 
 <%# <%= link_to "Shuffle", "", class: "btn-red" %>
-   
+
    <%# RESTAURANT MODAL %>
        <div class="shuffle-modal" id="restaurantmodal">
         <div class="shuffle-modal-header">
@@ -159,8 +159,8 @@
         <div class="shuffle-modal-body">
           <p><%= @restaurant.description %></p>
           <p><%= @restaurant.reviews.size %> Reviews
-          <%= render "shared/rating", percent: ((@restaurant.reviews.average(:rating).to_f / 5.0) * 100) %> 
-          </p> 
+          <%= render "shared/rating", percent: ((@restaurant.reviews.average(:rating).to_f / 5.0) * 100) %>
+          </p>
           <% @restaurant.reviews.each do |review| %>
           <%= render "shared/rating", percent: review.rating_as_percent %> <br>
           <%= review.title %> <br>
