@@ -15,6 +15,7 @@
 @import "components/footer";
 @import "components/form";
 @import "components/star_rating";
+@import "components/modal";
 
 
 h1, h2, h3, p{
@@ -23,6 +24,10 @@ h1, h2, h3, p{
 
 h1 {
   font-size: 26px;
+}
+
+h2 {
+  font-size: 18px;
 }
 
 h3 {
