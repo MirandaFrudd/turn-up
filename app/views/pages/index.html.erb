@@ -16,12 +16,17 @@
         <i class="fas fa-star"></i>
       </button> %>
       <button type="submit" class="btn-star" >
+        <!-- <i class="fas fa-star btn-star"></i> -->
         <span class="material-icons md-64 md-red" title="favourite me!">star_rate</span>
       </button>
       <%# <input class="btn-star" type="submit" value=""> %>
       <% end %>
+    <!-- <div class="d-flex flex-row">
+      <p>Favourite me!</p>
+    </div> -->
     </div>
-    <%= link_to restaurant_path(@restaurant) do %>
+
+    <%= link_to restaurant_path(@restaurant), class:'restaurant-link' do %>
     <div class="restaurant" id="shuffle-rest" data-modal-target="#restaurantmodal">
       <div class="card-element">
         <%= cl_image_tag @restaurant.photo.key, class:"cover" %>
@@ -60,7 +65,7 @@
       <span id="to-lock-rest" class="material-icons d-none md-red md-24">lock</span>
     </div>
 
-    <%= link_to bar_path(@bar) do %>
+    <%= link_to bar_path(@bar), class:'bar-link' do %>
     <div class="bar" id="shuffle-bar">
       <div data-modal-target="#modal" class = "card-element">
         <%= cl_image_tag @bar.photo.key, class:"cover" %>
@@ -99,7 +104,7 @@
       <span id="to-lock-bar" class="material-icons d-none md-red md-24">lock</span>
     </div>
 
-  <%= link_to activity_path(@activity) do %>
+  <%= link_to activity_path(@activity), class:'activity-link' do %>
     <div class="activity" id="shuffle-activity">
       <div class = "card-element">
         <%= cl_image_tag @activity.photo.key, class:"cover" %>
@@ -139,7 +144,7 @@
       <span id="to-lock-activity" class="material-icons d-none md-red md-24">lock</span>
     </div>
     <div class="d-flex justify-content-center">
-      <button type="button" id="shuffle" class="btn-red shuffle-button"><i class="fas fa-dice"></i></button>
+      <button type="button" id="shuffle" class="btn-red shuffle-button"><i class="fas fa-random"></i><!-- <i class="fas fa-dice"></i> --></button>
     </div>
   </div>
 
