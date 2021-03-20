@@ -1,7 +1,7 @@
 
 <div class="fav-banner">
   <div class="container">
-    <h1>FAVOURITES</h1>
+    <h2 class="m-0"><strong>My Favourites</strong></h2>
   </div>
 </div>
 
@@ -19,48 +19,100 @@
             <div class="fave-star">
               <span class="material-icons md-48 md-red">star_rate</span>
             </div>
-            <div class="item">
-              <div class="fave-img">
+            <%= link_to restaurant_path(favourite.restaurant) do %>
+            <div class="card-element">
               <%= cl_image_tag favourite.restaurant.photo.key, class:"cover" %>
-              </div>
-              <div class="fave-info">
-                <h2><%= favourite.restaurant.name %></h2>
-                <div class="fave-restaurant-icon">
-                  <span class="material-icons md-24 md-red center">restaurant</span>
+              <div class="card-element-content">
+                <div>
+                  <div class="card-element-top">
+                    <div>
+                      <h3><strong><%= favourite.restaurant.name %></strong></h3>
+                      <p><strong><%= favourite.restaurant.address.truncate(40) %></strong></p>
+                    </div>
+                    <div class="restaurant-icon">
+                      <span class="material-icons md-36 md-swiss-coffee center">restaurant</span>
+                    </div>
+                  </div>
+                  <p class="desc-margin"><%= favourite.restaurant.description.truncate(65) %></p>
+                </div>
+                <div class="main-card-icons">
+                  <div class="budget icon-margin">
+                    <% favourite.restaurant.budget.times { |i| puts %> <i class="fas fa-pound-sign"></i> <% } %>
+                  </div>
+                  <% if favourite.restaurant.day && favourite.restaurant.night %> <span class="material-icons md-15 icon-margin">brightness_4</span>
+                  <% elsif favourite.restaurant.night %> <span class="material-icons md-15 icon-margin">brightness_2</span>
+                  <% else favourite.restaurant.day %> <span class="material-icons md-15 icon-margin">brightness_5</span>
+                  <% end %>
                 </div>
               </div>
             </div>
-            <div class="item">
-              <div class="fave-img">
+            <% end %>
+            <%= link_to bar_path(favourite.bar) do %>
+            <div class="card-element">
               <%= cl_image_tag favourite.bar.photo.key, class:"cover" %>
-              </div>
-              <div class="fave-info">
-                  <h2><%= favourite.bar.name %></h2>
-                  <div class="fave-bar-icon">
-                    <span class="material-icons md-24 md-red">local_bar</span>
+              <div class="card-element-content">
+                <div>
+                  <div class="card-element-top">
+                    <div>
+                      <h3><strong><%= favourite.bar.name %></strong></h3>
+                      <p><strong><%= favourite.bar.address.truncate(40) %></strong></p>
+                    </div>
+                    <div class="bar-icon">
+                      <span class="material-icons md-36 md-swiss-coffee center">local_bar</span>
+                    </div>
                   </div>
+                  <p class="desc-margin"><%= favourite.bar.description.truncate(65) %></p>
+                </div>
+                <div class="main-card-icons">
+                  <div class="budget icon-margin">
+                    <% favourite.bar.budget.times { |i| puts %> <i class="fas fa-pound-sign"></i> <% } %>
+                  </div>
+                  <% if favourite.bar.day && favourite.bar.night %> <span class="material-icons md-15 icon-margin">brightness_4</span>
+                  <% elsif favourite.bar.night %> <span class="material-icons md-15 icon-margin">brightness_2</span>
+                  <% else favourite.bar.day %> <span class="material-icons md-15 icon-margin">brightness_5</span>
+                  <% end %>
+                </div>
               </div>
             </div>
-            <div class="item">
-              <div class="fave-img">
+            <% end %>
+            <%= link_to activity_path(favourite.activity) do %>
+            <div class="card-element">
               <%= cl_image_tag favourite.activity.photo.key, class:"cover" %>
-              </div>
-              <!-- <img src="https://source.unsplash.com/random/200x200" alt="restaurant image" class="fave-img"> -->
-              <div class="fave-info">
-                  <%# <h2>What to do:</h2> %>
-                  <h2><%= favourite.activity.name %></h2>
-                  <div class="fave-activity-icon">
-                    <span class="material-icons md-24 md-red">attractions</span>
+              <div class="card-element-content">
+                <div>
+                  <div class="card-element-top">
+                    <div>
+                      <h3><strong><%= favourite.activity.name %></strong></h3>
+                      <p><strong><%= favourite.activity.address.truncate(40) %></strong></p>
+                    </div>
+                    <div class="bar-icon">
+                      <span class="material-icons md-36 md-swiss-coffee center">attractions</span>
+                    </div>
                   </div>
+                  <p class="desc-margin"><%= favourite.activity.description.truncate(65) %></p>
+                </div>
+                <div class="main-card-icons">
+                  <div class="budget icon-margin">
+                    <% favourite.activity.budget.times { |i| puts %> <i class="fas fa-pound-sign"></i> <% } %>
+                  </div>
+                  <% if favourite.activity.day && favourite.bar.night %> <span class="material-icons md-15 icon-margin">brightness_4</span>
+                  <% elsif favourite.activity.night %> <span class="material-icons md-15 icon-margin">brightness_2</span>
+                  <% else favourite.activity.day %> <span class="material-icons md-15 icon-margin">brightness_5</span>
+                  <% end %>
+                </div>
               </div>
             </div>
+            <% end %>
+            <div class="container">
               <div class="buttons">
                 <a href="whatsapp://send?text=www.turn-up-london.com/favourites/<%= favourite.id %>" class="fave-btn">Share on WhatsApp  <i class="fab fa-whatsapp"></i></a>
+                <%= link_to "Back", :back %>
                 <%= link_to favourite_path(favourite), method: :delete, data: { confirm: 'Are you sure?' } do %>
-                  <i class="fas fa-trash-alt" style="color:#9E8576";"padding:8px"></i>
+                  <i class="fas fa-trash-alt trash" style="color:#9E8576"></i>
                 <% end %>
               </div>
             </div>
+          </div>
         </div>
       <% end %>
     </div>

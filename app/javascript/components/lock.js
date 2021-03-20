@@ -64,20 +64,32 @@ const loadRest = () => {
       console.log(data);
       document.getElementById("shuffle-rest").innerHTML = `
       <div class="card-element">
-      <img class="cover" src="http://res.cloudinary.com/dkzi7cweg/image/upload/${data.photo}">
+        <img class="cover" src="http://res.cloudinary.com/dkzi7cweg/image/upload/${data.photo}">
         <div class="card-element-content">
           <div>
             <div class="card-element-top">
               <div>
                 <h3><strong> ${data.restaurant.name} </strong></h3>
-                <p> ${data.restaurant.address.substring(0, 50)}... </p>
+                <p><strong> ${data.restaurant.address.substring(0, 40)}... </strong></p>
               </div>
               <div class="restaurant-icon">
                 <span class="material-icons md-36 md-swiss-coffee center">restaurant</span>
               </div>
             </div>
-            <p> ${data.restaurant.description.substring(0, 80)}... </p>
+            <p class="desc-margin"> ${data.restaurant.description.substring(0, 65)}... </p>
           </div>
+          <div class="main-card-icons">
+            <div class="budget icon-margin">
+              ${
+                (data.restaurant.budget === 1) ? `<i class="fas fa-pound-sign"></i>` :
+                (data.restaurant.budget === 2) ? `<i class="fas fa-pound-sign"></i> <i class="fas fa-pound-sign"></i>` :
+                (data.restaurant.budget === 3) ? `<i class="fas fa-pound-sign"></i> <i class="fas fa-pound-sign"></i> <i class="fas fa-pound-sign"></i>` : `<i class="fas fa-pound-sign"></i> <i class="fas fa-pound-sign"></i> <i class="fas fa-pound-sign"></i> <i class="fas fa-pound-sign"></i>`
+              }
+            </div>
+            ${ (data.restaurant.day && data.restaurant.night) ? `<span class="material-icons md-15 icon-margin">brightness_4</span>` : 
+                  data.restaurant.night ? `<span class="material-icons md-15 icon-margin">brightness_2</span>` : `<span class="material-icons md-15 icon-margin">brightness_5</span>` }
+          </div>
+        </div>
       </div>
       `
       document.getElementById("favourite_restaurant_id").value = data.restaurant.id
@@ -91,23 +103,35 @@ const loadBar = () => {
     .then((data) => {
       console.log(data);
       document.getElementById("shuffle-bar").innerHTML = `
-          <div class="card-element">
-          <img class="cover" src="http://res.cloudinary.com/dkzi7cweg/image/upload/${data.photo}">
-            <div class="card-element-content">
+      <div class = "card-element">
+        <img class="cover" src="http://res.cloudinary.com/dkzi7cweg/image/upload/${data.photo}">
+        <div class="card-element-content">
+          <div>
+            <div class="card-element-top">
               <div>
-                <div class="card-element-top">
-                  <div>
-                    <h3><strong> ${data.bar.name} </strong></h3>
-                    <p> ${data.bar.address.substring(0, 50)}... </p>
-                  </div>
-                  <div class="bar-icon">
-                    <span class="material-icons md-36 md-swiss-coffee center">local_bar</span>
-                  </div>
-                </div>
-                <p> ${data.bar.description.substring(0, 80)}... </p>
+                <h3><strong> ${data.bar.name} </strong></h3>
+                <p><strong> ${data.bar.address.substring(0, 40)}... </strong></p>
               </div>
+              <div class="bar-icon">
+                <span class="material-icons md-36 md-swiss-coffee">local_bar</span>
+              </div>
+            </div>
+            <p class="desc-margin"> ${data.bar.description.substring(0, 65)}... </p>
           </div>
-          `
+          <div class="main-card-icons">
+            <div class="budget icon-margin">
+              ${
+                (data.bar.budget === 1) ? `<i class="fas fa-pound-sign"></i>` :
+                (data.bar.budget === 2) ? `<i class="fas fa-pound-sign"></i> <i class="fas fa-pound-sign"></i>` :
+                (data.bar.budget === 3) ? `<i class="fas fa-pound-sign"></i> <i class="fas fa-pound-sign"></i> <i class="fas fa-pound-sign"></i>` : `<i class="fas fa-pound-sign"></i> <i class="fas fa-pound-sign"></i> <i class="fas fa-pound-sign"></i> <i class="fas fa-pound-sign"></i>`
+              }
+            </div>
+              ${(data.bar.day && data.bar.night) ? `<span class="material-icons md-15 icon-margin">brightness_4</span>` :
+                data.bar.night ? `<span class="material-icons md-15 icon-margin">brightness_2</span>` : `<span class="material-icons md-15 icon-margin">brightness_5</span>` }
+          </div>
+        </div>
+      </div>
+      `
       document.getElementById("favourite_bar_id").value = data.bar.id
     })
 }
@@ -119,21 +143,33 @@ const loadActivity = () => {
     .then((data) => {
       console.log(data);
       document.getElementById("shuffle-activity").innerHTML = `
-      <div class="card-element">
-      <img class="cover" src="http://res.cloudinary.com/dkzi7cweg/image/upload/${data.photo}">
+      <div class = "card-element">
+        <img class="cover" src="http://res.cloudinary.com/dkzi7cweg/image/upload/${data.photo}">
         <div class="card-element-content">
           <div>
             <div class="card-element-top">
               <div>
                 <h3><strong> ${data.activity.name} </strong></h3>
-                <p> ${data.activity.address.substring(0, 50)}... </p>
+                <p><strong> ${data.activity.address.substring(0, 40)}... </strong></p>
               </div>
               <div class="activity-icon">
-                <span class="material-icons md-36 md-swiss-coffee center">attractions</span>
+                <span class="material-icons md-36 md-swiss-coffee">attractions</span>
               </div>
             </div>
-            <p> ${data.activity.description.substring(0, 80)}... </p>
+            <p class="desc-margin"> ${data.activity.description.substring(0, 65)}... </p>
           </div>
+          <div class="main-card-icons">
+            <div class="budget icon-margin">
+              ${
+                (data.activity.budget === 1) ? `<i class="fas fa-pound-sign"></i>` :
+                (data.activity.budget === 2) ? `<i class="fas fa-pound-sign"></i> <i class="fas fa-pound-sign"></i>` :
+                (data.activity.budget === 3) ? `<i class="fas fa-pound-sign"></i> <i class="fas fa-pound-sign"></i> <i class="fas fa-pound-sign"></i>` : `<i class="fas fa-pound-sign"></i> <i class="fas fa-pound-sign"></i> <i class="fas fa-pound-sign"></i> <i class="fas fa-pound-sign"></i>`
+              }
+            </div>
+              ${(data.activity.day && data.activity.night) ? `<span class="material-icons md-15 icon-margin">brightness_4</span>` :
+                data.activity.night ? `<span class="material-icons md-15 icon-margin">brightness_2</span>` : `<span class="material-icons md-15 icon-margin">brightness_5</span>` }
+          </div>
+        </div>
       </div>
       `
       document.getElementById("favourite_activity_id").value = data.activity.id
