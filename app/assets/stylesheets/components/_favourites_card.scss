@@ -198,13 +198,6 @@ a {
   // animation-iteration-count: infinite;
 }
 
-
-// .material-icons.md-red:hover{
-//   color: #ef7381;
-//   // animation: shake 0.4s ease-out;
-//   // cursor: pointer;
-// }
-
 .cover {
   object-fit: cover;
   width: 130px;
@@ -297,3 +290,13 @@ a {
     transform: scale(1.15) rotate(0);
   }
 }
+
+#favourite-me{
+  display: flex;
+  justify-content: center;
+  padding: 0px;
+  font-size: 11px!important;
+  margin-bottom: -21px !important;
+  font-weight: 900;
+}
+

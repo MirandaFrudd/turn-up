@@ -49,7 +49,7 @@ Bar.destroy_all
 # end
 
 activity1 = Activity.new(
-  name: "Tide Lines perform at Scala",
+  name: "Tide Lines at Scala",
   description: "Scottish four-piece influenced by the traditional music of the West Highlands.",
   address: "Scala, 275 Pentonville Road",
   town: "London",
@@ -75,7 +75,7 @@ review.save
 # puts "there are #{Activity.count} activities"
 
 activity2 = Activity.new(
-  name: "Ben Fogle: Tales From the Wilderness",
+  name: "Ben Fogle: Live",
   description: "TV adventurer Ben Fogle tours with his latest evening of storytelling.",
   address: "Cadogan Hall, 5 Sloane Terrace",
   town: "London",
@@ -314,7 +314,7 @@ puts "there are #{Activity.count} activities"
 #   activity.website  = event['website']
 #   # activity.  = event['tags']
 #   # activity.photo = "https://source.unsplash.com/random(400x400)"
-#   activity.photo.nil? ? activity.photo = "https://unsplash.com/photos/F2KRf_QfCqw" : activity.photo = event['images'][0]['url'] 
+#   activity.photo.nil? ? activity.photo = "https://unsplash.com/photos/F2KRf_QfCqw" : activity.photo = event['images'][0]['url']
 #   puts activity.valid?
 #   activity.save!
 # end
@@ -408,7 +408,7 @@ review.save
 bar2 = Bar.new(
   name: "Callooh Callay, Chelsea",
   description: "It’s the West London counterpart to the multi-award-winning Callooh Callay in Shoreditch. Housed in a former night-club, and still utilising some of the old features, the decor’s a little off-kilter. Drinks-wise, however, nothing’s changed. On offer is a mix of Calooh Callay classics, as well as some newer creations, shaken up by a bar team from the likes of Sketch and 69 Colebrook Row.",
-  address: "316-318 Kings Road", 
+  address: "316-318 Kings Road",
   town: "London",
   post_code: "SW3 5UH",
   website: "https://www.calloohcallaybar-chelsea.com/",
