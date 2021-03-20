@@ -9,7 +9,7 @@
 //   // document.querySelectorAll(“.refresh”).location.reload();
 
 
-//   //this line is to watch the result in console , you can remove it later	
+//   //this line is to watch the result in console , you can remove it later
 //   console.log("Refreshed")
 // }
 
@@ -54,7 +54,7 @@ const load = () => {
     loadActivity()
   }
 }
-    
+
 
 const loadRest = () => {
   fetch('/index_restaurant', { headers: { accept: 'application/json' } })
@@ -62,6 +62,10 @@ const loadRest = () => {
     // .then(response => console.log(response))
     .then((data) => {
       console.log(data);
+      let restaurantLink = document.querySelector(".restaurant-link")
+      console.log(restaurantLink);
+      restaurantLink.setAttribute("href", `/restaurants/${data.restaurant.id}`)
+      console.log(restaurantLink);
       document.getElementById("shuffle-rest").innerHTML = `
       <div class="card-element">
         <img class="cover" src="http://res.cloudinary.com/dkzi7cweg/image/upload/${data.photo}">
@@ -86,7 +90,7 @@ const loadRest = () => {
                 (data.restaurant.budget === 3) ? `<i class="fas fa-pound-sign"></i> <i class="fas fa-pound-sign"></i> <i class="fas fa-pound-sign"></i>` : `<i class="fas fa-pound-sign"></i> <i class="fas fa-pound-sign"></i> <i class="fas fa-pound-sign"></i> <i class="fas fa-pound-sign"></i>`
               }
             </div>
-            ${ (data.restaurant.day && data.restaurant.night) ? `<span class="material-icons md-15 icon-margin">brightness_4</span>` : 
+            ${ (data.restaurant.day && data.restaurant.night) ? `<span class="material-icons md-15 icon-margin">brightness_4</span>` :
                   data.restaurant.night ? `<span class="material-icons md-15 icon-margin">brightness_2</span>` : `<span class="material-icons md-15 icon-margin">brightness_5</span>` }
           </div>
         </div>
@@ -102,6 +106,9 @@ const loadBar = () => {
     // .then(response => console.log(response))
     .then((data) => {
       console.log(data);
+      let barLink = document.querySelector(".bar-link")
+      console.log(barLink);
+      barLink.setAttribute("href", `/bars/${data.bar.id}`)
       document.getElementById("shuffle-bar").innerHTML = `
       <div class = "card-element">
         <img class="cover" src="http://res.cloudinary.com/dkzi7cweg/image/upload/${data.photo}">
@@ -142,6 +149,9 @@ const loadActivity = () => {
     // .then(response => console.log(response))
     .then((data) => {
       console.log(data);
+      let activityLink = document.querySelector(".activity-link")
+      console.log(activityLink);
+      activityLink.setAttribute("href", `/activities/${data.activity.id}`)
       document.getElementById("shuffle-activity").innerHTML = `
       <div class = "card-element">
         <img class="cover" src="http://res.cloudinary.com/dkzi7cweg/image/upload/${data.photo}">
