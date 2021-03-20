@@ -1,23 +1,28 @@
 
 <div class="fav-banner">
-  <div class="container">
-    <h2 class="m-0"><strong>My Favourites</strong></h2>
-  </div>
+  <%= link_to :back do %>
+    <i class="fas fa-arrow-circle-left button-back"></i>
+  <% end %>
+  <h2 class="m-0"><strong>My Favourites</strong></h2>
 </div>
 
 <div class="container">
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
+  <div id="carouselExampleIndicators" class="carousel slide" data-interval="false">
+<!--     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
       <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
       <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    </ol>
+    </ol> -->
     <div class="carousel-inner">
       <% @favourites.each_with_index do |favourite, index| %>
         <div class="carousel-item <%= "active" if index == (@favourites.size - 1) %>">
           <div class="fave-card">
-            <div class="fave-star">
-              <span class="material-icons md-48 md-red">star_rate</span>
+               <div class="card__corner">
+                  <div class="card__corner-triangle"></div>
+               </div>
+            <div class="fave-title-box">
+              <h2>Turn up in <strong><%= favourite.restaurant.town.upcase %></strong></h2>
+              <p>Created on <%= favourite.created_at.strftime("%d/%m/%Y") %></p>
             </div>
             <%= link_to restaurant_path(favourite.restaurant) do %>
             <div class="card-element">
@@ -106,9 +111,8 @@
             <div class="container">
               <div class="buttons">
                 <a href="whatsapp://send?text=www.turn-up-london.com/favourites/<%= favourite.id %>" class="fave-btn">Share on WhatsApp  <i class="fab fa-whatsapp"></i></a>
-                <%= link_to "Back", :back %>
                 <%= link_to favourite_path(favourite), method: :delete, data: { confirm: 'Are you sure?' } do %>
-                  <i class="fas fa-trash-alt trash" style="color:#9E8576"></i>
+                  <i class="fas fa-trash-alt trash" style="color:#6e6e6e"></i>
                 <% end %>
               </div>
             </div>
