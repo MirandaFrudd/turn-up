@@ -1,9 +1,10 @@
 <!-- <h1>Explore Options</h1> -->
 
 <%# <%= link_to "star", favourites_path(restaurant_id: @restaurant.id, bar_id: @bar.id, activity_id: @activity.id), method: :post %>
+
 <div class="container">
   <div class="main_card">
-    <div class="d-flex justify-content-center">
+   <div class="d-flex justify-content-center">
       <%= form_with model: Favourite.new do |f| %>
       <%= f.hidden_field :restaurant_id, value: @restaurant.id %>
       <%= f.hidden_field :bar_id, value: @bar.id %>
@@ -20,7 +21,7 @@
       <%# <input class="btn-star" type="submit" value=""> %>
       <% end %>
     </div>
-    <div class="restaurant" id="shuffle-rest">
+    <div class="restaurant" id="shuffle-rest" data-modal-target="#restaurantmodal">
       <div class="card-element">
         <%= cl_image_tag @restaurant.photo.key, class:"cover" %>
         <div class="card-element-content">
@@ -50,13 +51,14 @@
             </div>
   -->  </div>
       </div>
-    </div>
+      </div>
+
     <div id="lock-rest">
       <span id="to-unlock-rest" class="material-icons md-red md-24">lock_open</span>
       <span id="to-lock-rest" class="material-icons d-none md-red md-24">lock</span>
     </div>
     <div class="bar" id="shuffle-bar">
-      <div class = "card-element">
+      <div data-modal-target="#modal" class = "card-element">
         <%= cl_image_tag @bar.photo.key, class:"cover" %>
         <div class="card-element-content">
           <div>
@@ -86,6 +88,7 @@
         </div>
       </div>
     </div>
+
     <div id="lock-bar">
       <span id="to-unlock-bar" class="material-icons md-red md-24">lock_open</span>
       <span id="to-lock-bar" class="material-icons d-none md-red md-24">lock</span>
@@ -129,6 +132,26 @@
       <button type="button" id="shuffle" class="btn-red shuffle-button"><i class="fas fa-dice"></i>  Shuffle</button>
     </div>
   </div>
-</div>
 
 <%# <%= link_to "Shuffle", "", class: "btn-red" %>
+   
+   <%# RESTAURANT MODAL %>
+       <div class="shuffle-modal" id="restaurantmodal">
+        <div class="shuffle-modal-header">
+          <div class="title"><%= @restaurant.name %></div>
+          <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="shuffle-modal-body">
+          <p><%= @restaurant.description %></p>
+          <p><%= @restaurant.reviews.size %> Reviews
+          <%= render "shared/rating", percent: ((@restaurant.reviews.average(:rating).to_f / 5.0) * 100) %> 
+          </p> 
+          <% @restaurant.reviews.each do |review| %>
+          <%= render "shared/rating", percent: review.rating_as_percent %> <br>
+          <%= review.title %> <br>
+          <%= review.description %> <br>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit dolorem possimus ut, perferendis doloremque at saepe veritatis deserunt cupiditate quia! Mollitia perspiciatis tenetur, est voluptas saepe animi dicta sed sunt voluptates hic dolorum aliquam a veritatis aliquid soluta provident tempore iusto assumenda architecto deleniti illo ducimus quisquam? Ullam, quos atque!
+          <% end %>
+        </div>
+    </div>
+    <div id="shuffle-overlay"></div>

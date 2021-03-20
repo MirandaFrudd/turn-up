@@ -32,6 +32,7 @@ import "vivid-icons";
 // import { reload } from '../components/lock';
 // import { updateDiv } from '../components/lock';
 import { addLocks, load } from '../components/lock';
+import { initModal } from '../components/modal';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -46,9 +47,12 @@ document.addEventListener('turbolinks:load', () => {
   if (shuffle) {
     addLocks()
     shuffle.addEventListener("click", () => {
-      console.log("hello")
       load();
     })
+  }
+  const modalButton = document.querySelector('[data-modal-target]') 
+  if (modalButton) {
+    initModal()
   }
 });
 
@@ -57,3 +61,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
 })
+
+// MODAL FOR INDEX PAGE
+
+
