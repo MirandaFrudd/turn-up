@@ -1,9 +1,9 @@
 .fav-banner {
   background-size: cover;
   background-position: center;
-  padding: 16px 8;
+  padding: 15px 0px;
   color:$white;
-  background-color:$coral-red;
+  background-image: linear-gradient(to left top, #ffffff, #fbfbfb, #f7f7f7, #f4f3f3, #f0efef);
 }
 
 .item {
@@ -30,8 +30,8 @@
   // margin: 10px auto;
 
   height: 600px;
-  background: $swiss-coffee;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  background: $gray;
+  // box-shadow: 0 0 15px rgba(0,0,0,0.1);
   padding: 8px;
   border-radius: 10px;
   margin: 10px;
