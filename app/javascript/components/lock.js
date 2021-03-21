@@ -61,11 +61,13 @@ const loadRest = () => {
     .then(response => response.json())
     // .then(response => console.log(response))
     .then((data) => {
-      console.log(data);
-      let restaurantLink = document.querySelector(".restaurant-link")
-      console.log(restaurantLink);
-      restaurantLink.setAttribute("href", `/restaurants/${data.restaurant.id}`)
-      console.log(restaurantLink);
+      document.querySelector(".restaurant-modal-body").innerHTML = `
+      <p>
+        ${data.restaurant.name} <br>
+        ${data.restaurant.description}
+      </p>
+        `
+
       document.getElementById("shuffle-rest").innerHTML = `
       <div class="card-element">
         <img class="cover" src="http://res.cloudinary.com/dkzi7cweg/image/upload/${data.photo}">
@@ -85,9 +87,7 @@ const loadRest = () => {
           <div class="main-card-icons">
             <div class="budget icon-margin">
               ${
-                (data.restaurant.budget === 1) ? `<i class="fas fa-pound-sign"></i>` :
-                (data.restaurant.budget === 2) ? `<i class="fas fa-pound-sign"></i> <i class="fas fa-pound-sign"></i>` :
-                (data.restaurant.budget === 3) ? `<i class="fas fa-pound-sign"></i> <i class="fas fa-pound-sign"></i> <i class="fas fa-pound-sign"></i>` : `<i class="fas fa-pound-sign"></i> <i class="fas fa-pound-sign"></i> <i class="fas fa-pound-sign"></i> <i class="fas fa-pound-sign"></i>`
+                (`<i class="fas fa-pound-sign"></i> `).repeat(Number(data.restaurant.budget))
               }
             </div>
             ${ (data.restaurant.day && data.restaurant.night) ? `<span class="material-icons md-15 icon-margin">brightness_4</span>` :
@@ -105,10 +105,12 @@ const loadBar = () => {
     .then(response => response.json())
     // .then(response => console.log(response))
     .then((data) => {
-      console.log(data);
-      let barLink = document.querySelector(".bar-link")
-      console.log(barLink);
-      barLink.setAttribute("href", `/bars/${data.bar.id}`)
+      document.querySelector(".bar-modal-body").innerHTML = `
+      <p>
+        ${data.bar.name} <br>
+        ${data.bar.description}
+      </p>
+        `
       document.getElementById("shuffle-bar").innerHTML = `
       <div class = "card-element">
         <img class="cover" src="http://res.cloudinary.com/dkzi7cweg/image/upload/${data.photo}">
@@ -148,10 +150,16 @@ const loadActivity = () => {
     .then(response => response.json())
     // .then(response => console.log(response))
     .then((data) => {
-      console.log(data);
-      let activityLink = document.querySelector(".activity-link")
-      console.log(activityLink);
-      activityLink.setAttribute("href", `/activities/${data.activity.id}`)
+      // let activityLink = document.querySelector(".activity-link")
+      // activityLink.setAttribute("href", `/activities/${data.activity.id}`)
+
+      document.querySelector(".activity-modal-body").innerHTML = `
+      <p>
+        ${data.activity.name} <br>
+        ${data.activity.description}
+      </p>
+        `
+
       document.getElementById("shuffle-activity").innerHTML = `
       <div class = "card-element">
         <img class="cover" src="http://res.cloudinary.com/dkzi7cweg/image/upload/${data.photo}">
