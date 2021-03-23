@@ -2,6 +2,71 @@
 
 <%# <%= link_to "star", favourites_path(restaurant_id: @restaurant.id, bar_id: @bar.id, activity_id: @activity.id), method: :post %>
 
+    <!-- Button trigger modal -->
+<!-- Button trigger modal -->
+<%# BOOTSTRAP MODALS %>
+<!-- RESTAURANT MODAL -->
+<div class="modal fade" id="restaurantModal" tabindex="-1" role="dialog" aria-labelledby="restaurantModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="restaurantModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body restaurant-modal-body">
+        <h5><%= @restaurant.name %></h5> <br>
+        <p><%= @restaurant.description %></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BAR MODAL -->
+<div class="modal fade" id="barModal" tabindex="-1" role="dialog" aria-labelledby="barModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="barModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body bar-modal-body">
+        <h5><%= @bar.name %></h5> <br>
+        <p><%= @bar.description %></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ACTIVITY MODAL -->
+<div class="modal fade" id="activityModal" tabindex="-1" role="dialog" aria-labelledby="activityModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="activityModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body activity-modal-body">
+        <h5><%= @activity.name %></h5> <br>
+        <p><%= @activity.description %></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="container">
   <div class="main_card">
    <div class="d-flex justify-content-center">
@@ -26,8 +91,9 @@
         <p>Favourite me!</p>
       </div>
 
- <%#= link_to restaurant_path(@restaurant), class:'restaurant-link' do %>
-    <div class="restaurant" id="shuffle-rest" data-modal-target="#restaurantmodal">
+
+    <div class="restaurant" id="shuffle-rest" data-toggle="modal" data-target="#restaurantModal">
+
       <div class="card-element">
         <%= cl_image_tag @restaurant.photo.key, class:"cover" %>
         <div class="card-element-content">
@@ -58,16 +124,15 @@
   -->  </div>
       </div>
     </div>
-<%# end %>
+
 
     <div id="lock-rest">
       <span id="to-unlock-rest" class="material-icons md-red md-24">lock_open</span>
       <span id="to-lock-rest" class="material-icons d-none md-red md-24">lock</span>
     </div>
 
-    <%= link_to bar_path(@bar), class:'bar-link' do %>
-    <div class="bar" id="shuffle-bar">
-      <div data-modal-target="#modal" class = "card-element">
+    <div class="bar" id="shuffle-bar" data-toggle="modal" data-target="#barModal">
+      <div class = "card-element">
         <%= cl_image_tag @bar.photo.key, class:"cover" %>
         <div class="card-element-content">
           <div>
@@ -97,15 +162,14 @@
         </div>
       </div>
     </div>
-  <% end %>
 
     <div id="lock-bar">
       <span id="to-unlock-bar" class="material-icons md-red md-24">lock_open</span>
       <span id="to-lock-bar" class="material-icons d-none md-red md-24">lock</span>
     </div>
 
-  <%= link_to activity_path(@activity), class:'activity-link' do %>
-    <div class="activity" id="shuffle-activity">
+  <%#= link_to activity_path(@activity), class:'activity-link' do %>
+    <div class="activity" id="shuffle-activity" data-toggle="modal" data-target="#activityModal">
       <div class = "card-element">
         <%= cl_image_tag @activity.photo.key, class:"cover" %>
         <div class="card-element-content">
@@ -136,7 +200,7 @@
         </div>
       </div>
     </div>
-  <% end %>
+  <%# end %>
 
 
     <div id="lock-activity">
@@ -150,23 +214,3 @@
 
 <%# <%= link_to "Shuffle", "", class: "btn-red" %>
 
-   <%# RESTAURANT MODAL %>
-       <div class="shuffle-modal" id="restaurantmodal">
-        <div class="shuffle-modal-header">
-          <div class="title"><%= @restaurant.name %></div>
-          <button data-close-button class="close-button">&times;</button>
-        </div>
-        <div class="shuffle-modal-body">
-          <p><%= @restaurant.description %></p>
-          <p><%= @restaurant.reviews.size %> Reviews
-          <%= render "shared/rating", percent: ((@restaurant.reviews.average(:rating).to_f / 5.0) * 100) %>
-          </p>
-          <% @restaurant.reviews.each do |review| %>
-          <%= render "shared/rating", percent: review.rating_as_percent %> <br>
-          <%= review.title %> <br>
-          <%= review.description %> <br>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit dolorem possimus ut, perferendis doloremque at saepe veritatis deserunt cupiditate quia! Mollitia perspiciatis tenetur, est voluptas saepe animi dicta sed sunt voluptates hic dolorum aliquam a veritatis aliquid soluta provident tempore iusto assumenda architecto deleniti illo ducimus quisquam? Ullam, quos atque!
-          <% end %>
-        </div>
-    </div>
-    <div id="shuffle-overlay"></div>
