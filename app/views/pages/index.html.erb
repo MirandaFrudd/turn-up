@@ -86,12 +86,14 @@
       </button>
       <%# <input class="btn-star" type="submit" value=""> %>
       <% end %>
-    <!-- <div class="d-flex flex-row">
-      <p>Favourite me!</p>
-    </div> -->
     </div>
+      <div id="favourite-me">
+        <p>Favourite me!</p>
+      </div>
+
 
     <div class="restaurant" id="shuffle-rest" data-toggle="modal" data-target="#restaurantModal">
+
       <div class="card-element">
         <%= cl_image_tag @restaurant.photo.key, class:"cover" %>
         <div class="card-element-content">
@@ -122,6 +124,7 @@
   -->  </div>
       </div>
     </div>
+
 
     <div id="lock-rest">
       <span id="to-unlock-rest" class="material-icons md-red md-24">lock_open</span>

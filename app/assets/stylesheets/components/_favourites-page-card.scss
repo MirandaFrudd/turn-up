@@ -32,6 +32,12 @@
   font-size: 14px;
 }
 
+.fave-title h1{
+  padding: 19px;
+  display: flex;
+  justify-content: center;
+  color: $coral-red !important;
+}
 
 .fave-card {
   // width: 300px;

@@ -172,15 +172,15 @@ a {
   font-family: 'Poppins', sans-serif;
 
 
-  &:hover {
-    // text-decoration: none;
-    // background-color: white;
-    // color: black;
-    // border: solid;
-    color: white;
-    background-color: $button-hover;
-    text-decoration: none;
-  }
+  // &:hover {
+  //   // text-decoration: none;
+  //   // background-color: white;
+  //   // color: black;
+  //   // border: solid;
+  //   color: white;
+  //   background-color: $button-hover;
+  //   text-decoration: none;
+  // }
 }
 
 .btn-star {
@@ -196,13 +196,6 @@ a {
   // border-radius: 50%;
   // animation: shake 5s ease-out;
   // animation-iteration-count: infinite;
-}
-
-
-.material-icons.md-red:hover{
-  color: #ef7381;
-  // animation: shake 0.4s ease-out;
-  // cursor: pointer;
 }
 
 .cover {
@@ -262,16 +255,11 @@ a {
   align-items: center;
 }
 
-// .locked {
-//   color: red;
-// }
 
 .shuffle-button {
   font-size: 18px;
   color: $white;
   padding: 8px 12px!important;
-  // box-shadow: 0px 0px 10px 0px #bbbbbb;
-
   animation: wiggle 4s 2s infinite;
 }
 
@@ -303,32 +291,12 @@ a {
   }
 }
 
-//   &:hover{
-//   animation: shake 5s;
-//   }
-// }
-
-// @keyframes shake {
-//         2%, 18% {
-//             transform: skewX(-10deg);
-//         }
-
-//         4%, 16% {
-//             transform: skewX(10deg);
-//         }
-
-//         6%, 10%, 14% {
-//             transform: skewX(-10deg);
-//         }
-
-//         8%, 12% {
-//             transform: skewX(10deg);
-//         }
-
-//         18% {
-//             transform: skewX(-10deg);
-//         }
-//     }
-
-
+#favourite-me{
+  display: flex;
+  justify-content: center;
+  padding: 0px;
+  font-size: 11px!important;
+  margin-bottom: -21px !important;
+  font-weight: 900;
+}
 
