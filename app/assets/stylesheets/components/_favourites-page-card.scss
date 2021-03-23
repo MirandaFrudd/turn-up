@@ -6,7 +6,7 @@
   color:$white;
   background-image: linear-gradient(to left top, #ffffff, #fbfbfb, #f7f7f7, #f4f3f3, #f0efef);
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   position: relative;
   padding: 16px;
 }
@@ -141,7 +141,7 @@ border-color: transparent #f1f2f2 transparent transparent;
   width: 200px;
 
   &:hover {
-      background: $almond;
+      // background: $almond;
       text-decoration: none;
       color: white;
     }
