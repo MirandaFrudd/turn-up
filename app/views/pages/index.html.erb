@@ -16,8 +16,23 @@
         </button>
       </div>
       <div class="modal-body restaurant-modal-body">
-        <h5><%= @restaurant.name %></h5> <br>
-        <p><%= @restaurant.description %></p>
+        <div class = "show-card m-0">
+          <%= cl_image_tag @restaurant.photo.key, class:"show-img" %>
+          <h1><strong><%= @restaurant.name %></strong></h1>
+          <p class="show-address"><strong><%= @restaurant.address %>, <%= @restaurant.town %> <%= @restaurant.post_code %></strong></p>
+          <p class="show-desc"><%= @restaurant.description %></p>
+          <div class="show-icons">
+            <div class="show-icon-margin">
+              <% @restaurant.budget.times { |i| puts %> <i class="fas fa-pound-sign"></i> <% } %>
+            </div>
+            <div class="show-icon-margin">
+              <% if @restaurant.day && @restaurant.night %> <span class="material-icons md-20 icon-margin">brightness_4</span>
+                <% elsif @restaurant.night %> <span class="material-icons md-20 icon-margin">brightness_2</span>
+                <% else @restaurant.day %> <span class="material-icons md-20 icon-margin">brightness_5</span>
+              <% end %>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -37,8 +52,23 @@
         </button>
       </div>
       <div class="modal-body bar-modal-body">
-        <h5><%= @bar.name %></h5> <br>
-        <p><%= @bar.description %></p>
+        <div class = "show-card m-0">
+          <%= cl_image_tag @bar.photo.key, class:"show-img" %>
+          <h1><strong><%= @bar.name %></strong></h1>
+          <p class="show-address"><strong><%= @bar.address %>, <%= @bar.town %> <%= @bar.post_code %></strong></p>
+          <p class="show-desc"><%= @bar.description %></p>
+          <div class="show-icons">
+            <div class="show-icon-margin">
+              <% @bar.budget.times { |i| puts %> <i class="fas fa-pound-sign"></i> <% } %>
+            </div>
+            <div class="show-icon-margin">
+              <% if @bar.day && @bar.night %> <span class="material-icons md-20 icon-margin">brightness_4</span>
+                <% elsif @bar.night %> <span class="material-icons md-20 icon-margin">brightness_2</span>
+                <% else @bar.day %> <span class="material-icons md-20 icon-margin">brightness_5</span>
+              <% end %>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -57,8 +87,23 @@
         </button>
       </div>
       <div class="modal-body activity-modal-body">
-        <h5><%= @activity.name %></h5> <br>
-        <p><%= @activity.description %></p>
+        <div class = "show-card">
+          <%= cl_image_tag @activity.photo.key, class:"show-img" %>
+          <h1><strong><%= @activity.name %></strong></h1>
+          <p class="show-address"><strong><%= @activity.address %>, <%= @activity.town %> <%= @activity.post_code %></strong></p>
+          <p class="show-desc"><%= @activity.description %></p>
+          <div class="show-icons">
+            <div class="show-icon-margin">
+              <% @activity.budget.times { |i| puts %> <i class="fas fa-pound-sign"></i> <% } %>
+            </div>
+            <div class="show-icon-margin">
+              <% if @activity.day && @activity.night %> <span class="material-icons md-20 icon-margin">brightness_4</span>
+                <% elsif @activity.night %> <span class="material-icons md-20 icon-margin">brightness_2</span>
+                <% else @activity.day %> <span class="material-icons md-20 icon-margin">brightness_5</span>
+              <% end %>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

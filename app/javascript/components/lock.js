@@ -62,11 +62,22 @@ const loadRest = () => {
     // .then(response => console.log(response))
     .then((data) => {
       document.querySelector(".restaurant-modal-body").innerHTML = `
-      <p>
-        ${data.restaurant.name} <br>
-        ${data.restaurant.description}
-      </p>
-        `
+      <div class = "show-card m-0">
+        <img class="show-img" src="http://res.cloudinary.com/dkzi7cweg/image/upload/${data.photo}">
+        <h1><strong> ${data.restaurant.name} </strong></h1>
+        <p class="show-address"><strong> ${data.restaurant.address}, ${data.restaurant.town} ${data.restaurant.post_code}</strong></p>
+        <p class="show-desc"> ${data.restaurant.description} </p>
+        <div class="show-icons">
+          <div class="show-icon-margin">
+            ${(`<i class="fas fa-pound-sign"></i> `).repeat(Number(data.restaurant.budget))}
+          </div>
+          <div class="show-icon-margin">
+            ${(data.restaurant.day && data.restaurant.night) ? `<span class="material-icons md-15 icon-margin">brightness_4</span>` :
+      data.restaurant.night ? `<span class="material-icons md-15 icon-margin">brightness_2</span>` : `<span class="material-icons md-15 icon-margin">brightness_5</span>` }
+          </div>
+        </div>
+      </div>
+      `
 
       document.getElementById("shuffle-rest").innerHTML = `
       <div class="card-element">
@@ -106,11 +117,22 @@ const loadBar = () => {
     // .then(response => console.log(response))
     .then((data) => {
       document.querySelector(".bar-modal-body").innerHTML = `
-      <p>
-        ${data.bar.name} <br>
-        ${data.bar.description}
-      </p>
-        `
+      <div class = "show-card m-0">
+        <img class="show-img" src="http://res.cloudinary.com/dkzi7cweg/image/upload/${data.photo}">
+        <h1><strong> ${data.bar.name} </strong></h1>
+        <p class="show-address"><strong> ${data.bar.address}, ${data.bar.town} ${data.bar.post_code}</strong></p>
+        <p class="show-desc"> ${data.bar.description} </p>
+        <div class="show-icons">
+          <div class="show-icon-margin">
+            ${(`<i class="fas fa-pound-sign"></i> `).repeat(Number(data.bar.budget))}
+          </div>
+          <div class="show-icon-margin">
+            ${(data.bar.day && data.bar.night) ? `<span class="material-icons md-15 icon-margin">brightness_4</span>` :
+          data.bar.night ? `<span class="material-icons md-15 icon-margin">brightness_2</span>` : `<span class="material-icons md-15 icon-margin">brightness_5</span>` }
+          </div>
+        </div>
+      </div>
+      `
       document.getElementById("shuffle-bar").innerHTML = `
       <div class = "card-element">
         <img class="cover" src="http://res.cloudinary.com/dkzi7cweg/image/upload/${data.photo}">
@@ -154,11 +176,22 @@ const loadActivity = () => {
       // activityLink.setAttribute("href", `/activities/${data.activity.id}`)
 
       document.querySelector(".activity-modal-body").innerHTML = `
-      <p>
-        ${data.activity.name} <br>
-        ${data.activity.description}
-      </p>
-        `
+      <div class = "show-card m-0">
+        <img class="show-img" src="http://res.cloudinary.com/dkzi7cweg/image/upload/${data.photo}">
+        <h1><strong> ${data.activity.name} </strong></h1>
+        <p class="show-address"><strong> ${data.activity.address}, ${data.activity.town} ${data.activity.post_code}</strong></p>
+        <p class="show-desc"> ${data.activity.description} </p>
+        <div class="show-icons">
+          <div class="show-icon-margin">
+            ${(`<i class="fas fa-pound-sign"></i> `).repeat(Number(data.activity.budget))}
+          </div>
+          <div class="show-icon-margin">
+            ${(data.activity.day && data.activity.night) ? `<span class="material-icons md-15 icon-margin">brightness_4</span>` :
+          data.activity.night ? `<span class="material-icons md-15 icon-margin">brightness_2</span>` : `<span class="material-icons md-15 icon-margin">brightness_5</span>` }
+          </div>
+        </div>
+      </div>
+      `
 
       document.getElementById("shuffle-activity").innerHTML = `
       <div class = "card-element">
