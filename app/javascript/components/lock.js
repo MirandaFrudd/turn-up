@@ -72,8 +72,8 @@ const loadRest = () => {
             ${(`<i class="fas fa-pound-sign"></i> `).repeat(Number(data.restaurant.budget))}
           </div>
           <div class="show-icon-margin">
-            ${(data.restaurant.day && data.restaurant.night) ? `<span class="material-icons md-15 icon-margin">brightness_4</span>` :
-      data.restaurant.night ? `<span class="material-icons md-15 icon-margin">brightness_2</span>` : `<span class="material-icons md-15 icon-margin">brightness_5</span>` }
+            ${(data.restaurant.day && data.restaurant.night) ? `<span class="material-icons md-15 icon-margin">brightness_4</span> Day/Night` :
+      data.restaurant.night ? `<span class="material-icons md-15 icon-margin">brightness_2</span> Night` : data.restaurant.day ?`<span class="material-icons md-15 icon-margin">brightness_5</span> "Day"` : "" }
           </div>
         </div>
       </div>
@@ -127,8 +127,8 @@ const loadBar = () => {
             ${(`<i class="fas fa-pound-sign"></i> `).repeat(Number(data.bar.budget))}
           </div>
           <div class="show-icon-margin">
-            ${(data.bar.day && data.bar.night) ? `<span class="material-icons md-15 icon-margin">brightness_4</span>` :
-          data.bar.night ? `<span class="material-icons md-15 icon-margin">brightness_2</span>` : `<span class="material-icons md-15 icon-margin">brightness_5</span>` }
+            ${(data.bar.day && data.bar.night) ? `<span class="material-icons md-15 icon-margin">brightness_4</span> Day/Night` :
+          data.bar.night ? `<span class="material-icons md-15 icon-margin">brightness_2</span> Night` : data.bar.day ?`<span class="material-icons md-15 icon-margin">brightness_5</span> Day` : "" }
           </div>
         </div>
       </div>
@@ -186,8 +186,8 @@ const loadActivity = () => {
             ${(`<i class="fas fa-pound-sign"></i> `).repeat(Number(data.activity.budget))}
           </div>
           <div class="show-icon-margin">
-            ${(data.activity.day && data.activity.night) ? `<span class="material-icons md-15 icon-margin">brightness_4</span>` :
-          data.activity.night ? `<span class="material-icons md-15 icon-margin">brightness_2</span>` : `<span class="material-icons md-15 icon-margin">brightness_5</span>` }
+            ${(data.activity.day && data.activity.night) ? `<span class="material-icons md-15 icon-margin">brightness_4</span> Day/Night` :
+          data.activity.night ? `<span class="material-icons md-15 icon-margin">brightness_2</span> Night` : data.activity.day ? `<span class="material-icons md-15 icon-margin">brightness_5</span> Day`: "" }
           </div>
         </div>
       </div>

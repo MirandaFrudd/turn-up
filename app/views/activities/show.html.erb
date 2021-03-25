@@ -23,7 +23,7 @@
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
   
-      <h1 class="review-title"><strong><%= @activity.reviews.size %> Reviews</strong><%= render "shared/rating", percent: ((@activity.reviews.average(:rating).to_f / 5.0) * 100) %></h1>
+      <h1 class="review-title"><strong><%= @activity.reviews.size %> Google Reviews</strong><%= render "shared/rating", percent: ((@activity.reviews.average(:rating).to_f / 5.0) * 100) %></h1>
        
       <% @activity.reviews.each do |review| %>
         <div class="review-element">
