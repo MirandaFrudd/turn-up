@@ -9,9 +9,9 @@
           <% @activity.budget.times { |i| puts %> <i class="fas fa-pound-sign"></i> <% } %>
         </div>
         <div class="show-icon-margin">
-          <% if @activity.day && @activity.night %> <span class="material-icons md-20 icon-margin">brightness_4</span>
-            <% elsif @activity.night %> <span class="material-icons md-20 icon-margin">brightness_2</span>
-            <% else @activity.day %> <span class="material-icons md-20 icon-margin">brightness_5</span>
+          <% if @activity.day && @activity.night %> <span class="material-icons md-20 icon-margin">brightness_4</span> Day/Night
+            <% elsif @activity.night %> <span class="material-icons md-20 icon-margin">brightness_2</span> Night
+            <% else @activity.day %> <span class="material-icons md-20 icon-margin">brightness_5</span> Day
           <% end %>
         </div>
       </div>
