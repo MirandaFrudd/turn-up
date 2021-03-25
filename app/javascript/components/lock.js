@@ -73,7 +73,7 @@ const loadRest = () => {
           </div>
           <div class="show-icon-margin">
             ${(data.restaurant.day && data.restaurant.night) ? `<span class="material-icons md-15 icon-margin">brightness_4</span> Day/Night` :
-      data.restaurant.night ? `<span class="material-icons md-15 icon-margin">brightness_2</span> Night` : data.restaurant.day ?`<span class="material-icons md-15 icon-margin">brightness_5</span> "Day"` : "" }
+      data.restaurant.night ? `<span class="material-icons md-15 icon-margin">brightness_2</span> Night` : data.restaurant.day ?`<span class="material-icons md-15 icon-margin">brightness_5</span> Day` : "" }
           </div>
         </div>
       </div>
