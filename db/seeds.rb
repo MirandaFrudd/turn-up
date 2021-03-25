@@ -171,7 +171,7 @@ review.activity = activity5
 review.save
 
 activity6 = Activity.new(
-  name: "DNA VR Battersea Power Station",
+  name: "DNA Virtual Reality",
   description: "Experience Virtual Reality in London at DNA VR like never before! Solve mysteries, fight zombies and explore new worlds together.",
   address: "18 Arches Lane, Battersea",
   town: "London",

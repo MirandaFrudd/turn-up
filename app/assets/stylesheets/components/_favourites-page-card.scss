@@ -77,12 +77,20 @@
 
 .fave-title-box p {
     font-size:10px;
+    margin: 0px;
 }
 
 .fave-title-box h2 {
   color: $coral-red;
   font-size: 26px;
   font-weight: bold;
+}
+
+.fave-title-box-subtext {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  margin: 0px;
 }
 
 .card__corner {
@@ -126,19 +134,19 @@ border-color: transparent #f1f2f2 transparent transparent;
   padding: 10px;
   display: flex;
   justify-content: space-between;
-  align-items: center
+  align-items: center;
 }
 
 .fave-btn{
   background-color: $coral-red;
   padding: 6px;
   color: white;
-  border-radius: 4px;
+  border-radius: 2px;
   text-decoration: none;
   display: flex;
   justify-content: center;
-  margin-bottom: 10px;
-  width: 200px;
+  // margin-bottom: 10px;
+  width: 325px;
 
   &:hover {
       // background: $almond;
@@ -156,7 +164,7 @@ border-color: transparent #f1f2f2 transparent transparent;
 
 .buttons{
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .fave-heart {
@@ -198,8 +206,10 @@ border-color: transparent #f1f2f2 transparent transparent;
 }
 
 .trash {
-  margin: 12px;
-  padding-left: 5px;
+  margin-top: 0px;
+  padding-left: 15px;
+  // padding-right: 10px;
+  font-size: 15px;
 }
 
 

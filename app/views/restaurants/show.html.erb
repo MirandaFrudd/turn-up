@@ -9,9 +9,9 @@
           <% @restaurant.budget.times { |i| puts %> <i class="fas fa-pound-sign"></i> <% } %>
         </div>
         <div class="show-icon-margin">
-          <% if @restaurant.day && @restaurant.night %> <span class="material-icons md-20 icon-margin">brightness_4</span>
-            <% elsif @restaurant.night %> <span class="material-icons md-20 icon-margin">brightness_2</span>
-            <% else @restaurant.day %> <span class="material-icons md-20 icon-margin">brightness_5</span>
+          <% if @restaurant.day && @restaurant.night %> <span class="material-icons md-20 icon-margin">brightness_4</span> Day/Night
+            <% elsif @restaurant.night %> <span class="material-icons md-20 icon-margin">brightness_2</span> Night
+            <% else @restaurant.day %> <span class="material-icons md-20 icon-margin">brightness_5</span> Day
           <% end %>
         </div>
       </div>

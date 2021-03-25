@@ -22,7 +22,12 @@
                </div>
             <div class="fave-title-box">
               <h2>Turn up in <strong><%= favourite.restaurant.town.upcase %></strong></h2>
-              <p>Created on <%= favourite.created_at.strftime("%d/%m/%Y") %></p>
+              <div class="fave-title-box-subtext">
+                <p>Created on <%= favourite.created_at.strftime("%d/%m/%Y") %></p>
+                <%= link_to favourite_path(favourite), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                  <i class="fas fa-trash-alt trash" style="color:#6e6e6e"></i>
+                <% end %>
+              </div>
             </div>
             <%= link_to restaurant_path(favourite.restaurant) do %>
             <div class="card-element">
@@ -111,9 +116,7 @@
             <div class="container">
               <div class="buttons">
                 <a href="whatsapp://send?text=www.turn-up-london.com/favourites/<%= favourite.id %>" class="fave-btn">Share on WhatsApp  <i class="fab fa-whatsapp"></i></a>
-                <%= link_to favourite_path(favourite), method: :delete, data: { confirm: 'Are you sure?' } do %>
-                  <i class="fas fa-trash-alt trash" style="color:#6e6e6e"></i>
-                <% end %>
+
               </div>
             </div>
           </div>
