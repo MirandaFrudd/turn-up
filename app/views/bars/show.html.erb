@@ -15,8 +15,12 @@
           <% end %>
         </div>
       </div>
-      <p><%= link_to "Visit website", @bar.website, target: :blank, class: "show-link" %></p>
-      
+
+      <div class="show-links">
+        <p><%= link_to "Visit website", @bar.website, target: :blank, class: "show-link" %></p>
+        <%= link_to "Back", request.referer.present? ? request.referer : root_path, class: "show-link" %>
+      </div>
+
       <div id="map"
         style="width: 100%; height: 200px;"
         data-markers="<%= @marker.to_json %>"
@@ -25,6 +29,7 @@
   
       <h1 class="review-title"><strong><%= @bar.reviews.size %> Google Reviews</strong><%= render "shared/rating", percent: ((@bar.reviews.average(:rating).to_f / 5.0) * 100) %></h1>
        
+
       <% @bar.reviews.each do |review| %>
         <div class="review-element">
           <strong><%= review.title %></strong> <br>
